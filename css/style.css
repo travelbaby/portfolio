@@ -162,7 +162,7 @@ img {
 #mask {
   background-color: #ede6d6;
   width: 100vw;
-  height: 50vw;
+  height: 50vh;
   top: -120%;
   left: 0;
   position: fixed;
