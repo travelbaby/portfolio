@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akane's Portfolio - Webコーダーのプロフィール</title>
+    <meta name="keywords" content="コーディング, HTML/CSS, ポートフォリオ, プロフィール">
+    <meta name="description" content="webコーダーのプロフィールポートフォリオサイトです">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="splide-master/dist/css/splide-core.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#works">WORKS</a></li>
+                <li class="nav__item"><a href="#skill">SKILL</a></li>
+                <li class="nav__item"><a href="#about">ABOUT</a></li>
+                <li class="nav__item--contact"><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div><!-- /.toggle-btn -->
+
+    <div id="mask">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#works">WORKS</a></li>
+            <li class="nav__item"><a href="#skill">SKILL</a></li>
+            <li class="nav__item"><a href="#about">ABOUT</a></li>
+            <li class="nav__item--contact"><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+
+
+
+    <main id="main" class="main">
+        <div class="main-visual">
+            <h1 class="main-visual__title">
+                AKANE'S
+                PORT FOLIO
+            </h1>
+            <img class="main-visual__image" src="img/mainvisual.jpg" alt="メイン画像">
+        </div><!-- / -->
+
+
+        <section id="works" class="works splide" aria-labelledby="carousel-heading">
+            <h2 id="carousel-heading" class="works__title titleAnime">WORKS</h2>
+            <div class="splide__track">
+                <ul class="works__slider splide__list">
+                    <li class="works__slide splide__slide"><img src="img/slider_1.jpg" alt="スライド画像1"></li>
+                    <li class="works__slide splide__slide"><img src="img/slider_2.jpg" alt="スライド画像2"></li>
+                    <li class="works__slide splide__slide"><img src="img/slider_3.jpg" alt="スライド画像3"></li>
+                    <li class="works__slide splide__slide"><img src="img/slider_4.jpg" alt="スライド画像4"></li>
+                </ul>
+            </div><!-- /.splide__track -->
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <img src="img/left_icon.png" alt="前へ">
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <img src="img/right_icon.png" alt="次へ">
+                </button>
+            </div>
+            <ul class="splide__pagination"></ul>
+        </section>
+
+        <section class="skill" id="skill">
+            <h2 class="skill__title titleAnime">SKILL</h2>
+            <p class="skill__text">アイコンをクリックすると詳細が表示されます。</p>
+            <ul class="skill__list randomScroll">
+                <li class="skill__item">
+                    <img src="img/html.png" alt="HTMLアイコン">
+                    <div class="skill__details">
+                        <p>タグの適切な使用や読みやすく保守しやすいコードを心掛けています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/css.png" alt="CSSアイコン">
+                    <div class="skill__details">
+                        <p>BEM記法を取り入れており、クラス名の命名規則やスタイルシートの管理においても一貫性と拡張性を重視しています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/sass.png" alt="Sassアイコン">
+                    <div class="skill__details">
+                        <p>変数やミックスインを駆使し、コーディング時間を短縮・保守性の高いスタイルを構築しています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/javascript.png" alt="JavaScriptアイコン">
+                    <div class="skill__details">
+                        <p>一般的なウェブサイトで必要とされる動的な要素やインタラクションの実装対応可能です。より複雑なインタラクションの実装にも積極的に取り組んでおり、今後もさらにスキルを向上させ、より幅広い要件に対応できるよう努めています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/photoshop.png" alt="Photoshopアイコン">
+                    <div class="skill__details">
+                        <p>このサイトのような比較的シンプルなデザインであれば、Photoshopにてカンプ作成可能です。また、Photoshopで作成されたカンプを基にしたコーディングも可能です。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/xd.png" alt="XDアイコン">
+                    <div class="skill__details">
+                        <p>現在受注している案件ではAdobe XDを使用しており、XDの操作に慣れています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/wordpress.png" alt="WordPressアイコン">
+                    <div class="skill__details">
+                        <p> テキストテキストテキスト</p>
+                    </div><!-- /.skill__details -->
+                </li>
+                <li class="skill__item">
+                    <img src="img/notion.png" alt="Notionアイコン">
+                    <div class="skill__details">
+                        <p>仕事の案件詳細やタスク管理にNotionを日常的に利用しており、効率的な業務遂行と確実な進捗管理を行っています。</p>
+                    </div><!-- /.skill__details -->
+                </li>
+            </ul>
+        </section>
+
+        <section class="about" id="about">
+            <h2 class="about__title titleAnime">ABOUT</h2>
+            <div class="about__wrapper">
+                <img class="about__image about__item" src="img/about.jpg" alt="プロフィール画像">
+                <p class="about__text about__item">webコーダーの茜です。
+                    レスポンシブデザインやJavaScriptによる動的コンテンツ作成など、幅広いコーディングスキルを有し、美容系ECサイトHPのコーディングを手がけています。
+                    元看護師の経験を活かし、ユーザー視点に立って、正確かつ効率的なコーディングを心がけています。
+                    adobe XDやphoto shopを使用した、このポートフォリオサイトや
+                    掲載している架空サイトのような簡単なデザインであれば自ら作成することも可能です。
+                    お客様のご要望に迅速に対応し、進捗状況を報告いたします。
+                    また、ご納得いただけるまで、何度でも無料で修正いたします。
+                    無料相談も行なっております。
+                    まずはお気軽にご相談ください。
+                </p>
+            </div><!-- /.about_wrapper -->
+        </section>
+
+
+        <!-- <section id="contact">
+            <h2 class="contact__title titleAnime">CONTACT</h2>
+            <form action="#" method="post" class="contact">
+                <div class="contact__item">
+                    <label for="name" class="contact__label">お名前</label>
+                    <input class="contact__input" type="text" name="name" id="name" required>
+                </div>
+                <div class="contact__item">
+                    <label class="contact__label" for="email">メールアドレス</label>
+                    <input class="contact__input" type="email" name="email" id="email" required>
+                </div>
+                <div class="contact__item">
+                    <label class="contact__label" for="message">お問い合せ内容</label>
+                    <textarea class="contact__textarea" type="message" name="message" id="message" required></textarea>
+                </div>
+                <div class="contact__item">
+                <button class="contact__button" type="submit">送信</button>
+                </div>
+            </form>
+        </section> -->
+
+        <section id="contact">
+            <div class="contact-wrapper">
+            <iframe src="https://tayori.com/form/9934a00aa1ba367bd39d94ebb5f63aef779969a0/" frameborder="no" scrolling="no" width="100%" height="720px"></iframe>
+            </div><!-- /.contact-wrapper -->
+            <!-- <iframe
+            id="inlineFrameExample"
+            title="Inline Frame Example"
+            width="300"
+            height="600"
+            src="https://tayori.com/form/9934a00aa1ba367bd39d94ebb5f63aef779969a0/">
+            </iframe> -->
+        <section id="contact">
+
+
+        <ul id="sns" class="sns">
+            <li class="sns__item">
+                <a href="#" target="_blank" rel="noopener noreferrer" title="instagramを開きます">
+                    <img src="img/insta_icon.png" alt="Instagramアイコン">
+                </a>
+            </li>
+            <li class="sns__item">
+                <a href="#" target="_blank" rel="noopener noreferrer" title="blogを開きます">
+                    <img src="img/blog_icon.png" alt="Blogアイコン">
+                </a>
+            </li>
+            <li class="sns__item">
+                <a href="#" target="_blank" rel="noopener noreferrer" title="Xを開きます">
+                    <img src="img/x_icon.png" alt="Xアイコン">
+                </a>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <p class="page-top">
+            <a href="#">
+                <img src="img/to-top.png" alt="トップへ戻るボタン">
+            </a>
+        </p>
+        <p class="footer__copy">
+            &copy; 2024 AKANE'S PORT FOLIO
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="splide-master/dist/js/splide.min.js"></script>
+    <script src="splide-extension-auto-scroll-master/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
