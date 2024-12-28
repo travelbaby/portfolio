@@ -320,6 +320,9 @@ img {
     top: 50%;
     width: 100%;
     transform: translateY(-50%);
+    @media screen and (max-width: $break-point) {
+        display: none;
+    }
 }
 
 .splide__arrow {

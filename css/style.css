@@ -314,6 +314,11 @@ img {
   width: 100%;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 1000px) {
+  .splide__arrows {
+    display: none;
+  }
+}
 
 .splide__arrow {
   position: absolute;
