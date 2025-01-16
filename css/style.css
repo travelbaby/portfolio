@@ -260,6 +260,15 @@ img {
 /* ========
     ワークス
 ======== */
+.sub-title {
+  display: block;
+  color: #ede6d6;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: clamp(12px, 1.5vw, 32px);
+  font-family: "Crimson Text";
+}
+
 .works__title {
   font-size: 3.5rem;
   color: #ede6d6;
@@ -323,7 +332,6 @@ img {
 .splide__arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   width: 70px;
   border: none;
   padding: 10px;
@@ -374,6 +382,82 @@ img {
   width: 30px;
 }
 
+#design {
+  padding-top: 10rem;
+}
+
+.design__wrapper {
+  display: flex;
+}
+
+.design__list {
+  overflow-x: auto; /* 横スクロールを有効化 */
+  scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
+  -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
+  scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
+  display: flex;
+  flex-direction: row;
+  width: 3050px;
+}
+
+.design__list li {
+  width: 500px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.design__list li img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.simplebar-hover {
+  transform: none !important;
+}
+
+.simplebar-scrollbar:before {
+  display: none;
+}
+
+.simplebar-track.simplebar-horizontal {
+  height: 10px;
+  background-color: #ede6d6;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  bottom: -30px;
+  position: absolute;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  height: 7px;
+  position: absolute;
+  top: 15%;
+  transform: translateY(-50%);
+  min-width: 30px;
+  background-color: #928da3;
+  border-radius: 5px;
+  width: auto;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:hover,
+.simplebar-track.simplebar-horizontal:hover .simplebar-scrollbar {
+  background-color: #928da3;
+  opacity: 1 !important;
+}
+
+.simplebar-track.simplebar-horizontal {
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) and (max-width: 769px) {
+  .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+    width: 50px !important;
+  }
+}
 /* ========
     スキル
 ======== */

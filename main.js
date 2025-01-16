@@ -289,3 +289,8 @@ $(document).ready(function () {
         return false;
     });
 });
+
+
+new SimpleBar(document.querySelector('.design__wrapper'), {
+    autoHide: false, // 必要に応じてスクロールバーを常に表示
+});
