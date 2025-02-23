@@ -398,19 +398,14 @@ img {
 
 .design__wrapper {
   display: flex;
-  overflow-x: auto; /* 横スクロールを有効化 */
-  overflow-y: hidden; /* 縦スクロールを無効化 */
-  scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
-  -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .scroll-container::-webkit-scrollbar {
   display: none;
-}
-
-.design__wrapper .simplebar-scrollbar {
-  height: 10px;
-  width: 90%;
 }
 
 .design__wrapper .simplebar-track {
@@ -432,18 +427,14 @@ img {
 }
 
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-  background-color: #7a6b91 !important; /* つまみの中央部分も紫に */
-  box-shadow: none !important; /* 影を完全に消す */
-}
-
-.design__wrapper .simplebar-track.simplebar-horizontal {
-  margin-top: 30px !important; /* スクロールバーだけ下にずらす */
+  background-color: #7a6b91 !important;
+  box-shadow: none !important;
 }
 
 .design__list {
   display: flex;
   flex-direction: row;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .design__list li {
   width: 500px;
@@ -456,6 +447,9 @@ img {
   height: auto;
 }
 @media screen and (max-width: 769px) {
+  .design__list {
+    margin-bottom: 10px;
+  }
   .design__list li {
     width: 250px;
   }

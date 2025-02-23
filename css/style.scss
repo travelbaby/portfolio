@@ -410,19 +410,15 @@ img {
 
 .design__wrapper {
     display: flex;
-    overflow-x: auto; /* 横スクロールを有効化 */
-    overflow-y: hidden; /* 縦スクロールを無効化 */
-    scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
-    -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .scroll-container::-webkit-scrollbar {
     display: none;
 }
 
-.design__wrapper .simplebar-scrollbar {
-    height: 10px;
-    width: 90%;
-}
 .design__wrapper .simplebar-track {
     width: 80%;
     background-color: #ede6d6 !important;
@@ -440,24 +436,13 @@ img {
     border-radius: 5px;
 }
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-    background-color: #7a6b91 !important; /* つまみの中央部分も紫に */
-    box-shadow: none !important; /* 影を完全に消す */
+    background-color: #7a6b91 !important;
+    box-shadow: none !important;
 }
-.design__wrapper .simplebar-track.simplebar-horizontal {
-    margin-top: 30px !important; /* スクロールバーだけ下にずらす */
-}
-
-// .simplebar-track.simplebar-horizontal .simplebar-scrollbar:hover,
-// .simplebar-track.simplebar-horizontal:hover .simplebar-scrollbar {
-//     background-color: #7a6b91 !important;
-//     opacity: 1 !important;
-// }
-
-
 .design__list {
     display: flex;
     flex-direction: row;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     li {
         width: 500px;
         flex-shrink: 0;
@@ -469,6 +454,7 @@ img {
         height: auto;
     }
         @media screen and (max-width: 769px) {
+            margin-bottom: 10px;
             li {
                 width: 250px;
             }
@@ -478,10 +464,6 @@ img {
             }
         }
     }
-
-//$main_color: #7a6b91;が中にある色
-// $sub_color: #ede6d6;がスクロールトラック
-//トラックの高さ１０pxトラックハンドル７px幅親要素の９０％
 
 /* ========
     スキル
