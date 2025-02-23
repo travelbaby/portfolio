@@ -1,6 +1,6 @@
 $main_color: #7a6b91;
 $sub_color: #ede6d6;
-$font-sizes: 3.5rem 1.5rem 3rem .9rem 2.5rem;
+$font-sizes: 3.5rem 1.5rem 3rem .9rem 2.5rem 0.6rem;
 $font-stack: "Crimson Text", 'poppins', 'Noto Sans CJK JP';
 $title-margin: 10rem auto 2.5rem;
 $title-margin-sp: 5rem auto 2rem;
@@ -85,6 +85,11 @@ img {
         opacity: 1;
         text-shadow: $title-shadow;
     }
+}
+
+.note {
+    font-size: nth($font-sizes, 6);
+    letter-spacing: initial;
 }
 
 /* ========
@@ -282,7 +287,7 @@ img {
     color: #ede6d6;
     text-align: center;
     margin-bottom: 2.5rem;
-    font-size: clamp(12px, 1.5vw, 32px);
+    font-size: clamp(12px, 2vw, 32px);
     font-family: nth($font-stack, 1);
 }
 
@@ -402,31 +407,28 @@ img {
 
 .design__wrapper {
     display: flex;
-    // max-width: 100%; /* 親要素の幅を設定 */
 }
+
+
 
 .design__list {
-    overflow-x: auto; /* 横スクロールを有効化 */
-    // overflow-y: hidden; /* 縦スクロールを無効化 */
-    scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
-    -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
-    scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
     display: flex;
     flex-direction: row;
-    // width: max-content;
     width: calc(500px * 6 + 10px * 5);
-}
-
-.design__list li {
-    width: 500px;
-    flex-shrink: 0;
-    margin-right: 20px;
-}
-
-.design__list li img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    li {
+        width: 500px;
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+    li img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .simplebar-hover {
@@ -489,14 +491,14 @@ img {
         margin: $title-margin;
     }
 
-    &__text {
-        color: $sub_color;
-        text-align: center;
-        margin: 0 auto 40px;
-        @media screen and (max-width: $break-pointSP) {
-            font-size: 0.9rem;
-        }
-    }
+    // &__text {
+    //     color: $sub_color;
+    //     text-align: center;
+    //     margin: 0 auto 40px;
+    //     @media screen and (max-width: $break-pointSP) {
+    //         font-size: nth($font-sizes, 2);
+    //     }
+    // }
 
     &__list {
         display: grid;
