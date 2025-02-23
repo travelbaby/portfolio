@@ -22,6 +22,12 @@ html {
     font-size: 100%;
     background-color: $main_color;
 }
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN",
+                "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "ヒラギノ角ゴシック",
+                "Meiryo", "Arial", "sans-serif";
+}
+
 
 li {
     list-style: none;
