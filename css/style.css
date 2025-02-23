@@ -395,6 +395,14 @@ img {
   display: flex;
   position: relative;
   padding-bottom: 40px;
+  overflow-x: auto; /* 横スクロールを有効化 */
+  overflow-y: hidden; /* 縦スクロールを無効化 */
+  scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
+  -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Webkit系ブラウザ（Chrome, Safari）用：スクロールバーを非表示 */
 }
 
 .design__list {
@@ -416,6 +424,18 @@ img {
   max-width: 100%;
   height: auto;
 }
+@media screen and (max-width: 769px) {
+  .design__list {
+    width: 1550px;
+  }
+  .design__list li {
+    width: 250px;
+  }
+  .design__list li img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 .simplebar-hover {
   transform: none !important;
@@ -425,16 +445,18 @@ img {
   display: none;
 }
 
+.simplebar-scrollbar {
+  will-change: transform;
+}
+
+.simplebar-track {
+  visibility: visible !important;
+}
+
 .simplebar-track.simplebar-horizontal {
-  height: 10px;
   background-color: #ede6d6;
-  border-radius: 5px;
   width: 90%;
   margin: 0 auto;
-  bottom: -20px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
@@ -456,14 +478,12 @@ img {
 
 .simplebar-track.simplebar-horizontal {
   border-radius: 5px;
-  width: 90%;
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 769px) {
   .simplebar-track.simplebar-horizontal {
     width: 90%;
-    bottom: -15px; /* スマホでは少し上に */
+    bottom: -15px;
   }
   .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
     width: 50px !important;

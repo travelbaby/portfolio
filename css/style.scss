@@ -409,11 +409,19 @@ img {
     display: flex;
     position: relative;
     padding-bottom: 40px;
+    overflow-x: auto; /* 横スクロールを有効化 */
+    overflow-y: hidden; /* 縦スクロールを無効化 */
+    scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
+    -ms-overflow-style: none; /* IE用：スクロールバーを非表示 */
+}
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Webkit系ブラウザ（Chrome, Safari）用：スクロールバーを非表示 */
 }
 
 .design__list {
     display: flex;
     flex-direction: row;
+    // width: 100%;
     width: calc(500px * 6 + 10px * 5);
     overflow-x: auto;
     scrollbar-width: none;
@@ -429,7 +437,18 @@ img {
         max-width: 100%;
         height: auto;
     }
-}
+        @media screen and (max-width: 769px) {
+            width: calc(250px * 6 + 10px * 5);
+            li {
+                width: 250px;
+            }
+            li img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
 
 .simplebar-hover {
     transform: none !important;
@@ -438,32 +457,27 @@ img {
 .simplebar-scrollbar:before {
     display: none;
 }
+.simplebar-scrollbar {
+    will-change: transform;
+}
+.simplebar-track {
+    visibility: visible !important;
+}
 
 .simplebar-track.simplebar-horizontal {
-    height: 10px;
     background-color: #ede6d6;
-    border-radius: 5px;
     width: 90%;
     margin: 0 auto;
-    bottom: -20px;
-    position: absolute;
-    // position: relative;
-    left: 50%;
-    transform: translateX(-50%); 
 }
 
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
     height: 7px;
     position: absolute;
-    // top: 15%;
-    // top: 50%;
     top: calc(50% - 3.5px);
     transform: translateY(-50%);
     min-width: 30px; 
-    // max-width: 100%;
     background-color: #928da3;
     border-radius: 5px;
-    // width: auto;
     box-sizing: border-box;
 }
 
@@ -475,14 +489,12 @@ img {
 
     .simplebar-track.simplebar-horizontal {
         border-radius: 5px;
-        width: 90%;
-        margin: 0 auto;
     }
     
     @media screen and (max-width: 769px) {
     .simplebar-track.simplebar-horizontal {
         width: 90%;
-        bottom: -15px; /* スマホでは少し上に */
+        bottom: -15px;
     }
     .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
         width: 50px !important;
