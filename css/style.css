@@ -374,6 +374,11 @@ img {
 .splide__pagination li {
   margin: 0 5px;
 }
+@media screen and (max-width: 768px) {
+  .splide__pagination li {
+    margin: 0 2px;
+  }
+}
 .splide__pagination button {
   width: 20px;
   height: 4px;
@@ -393,8 +398,6 @@ img {
 
 .design__wrapper {
   display: flex;
-  position: relative;
-  padding-bottom: 40px;
   overflow-x: auto; /* 横スクロールを有効化 */
   overflow-y: hidden; /* 縦スクロールを無効化 */
   scrollbar-width: none; /* Firefox用：スクロールバーを非表示 */
@@ -402,17 +405,45 @@ img {
 }
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* Webkit系ブラウザ（Chrome, Safari）用：スクロールバーを非表示 */
+  display: none;
+}
+
+.design__wrapper .simplebar-scrollbar {
+  height: 10px;
+  width: 90%;
+}
+
+.design__wrapper .simplebar-track {
+  width: 80%;
+  background-color: #ede6d6 !important;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 10px;
+  position: relative;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  background-color: #7a6b91 !important;
+  color: #7a6b91 !important;
+  height: 8px;
+  position: absolute;
+  top: 1px;
+  border-radius: 5px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+  background-color: #7a6b91 !important; /* つまみの中央部分も紫に */
+  box-shadow: none !important; /* 影を完全に消す */
+}
+
+.design__wrapper .simplebar-track.simplebar-horizontal {
+  margin-top: 30px !important; /* スクロールバーだけ下にずらす */
 }
 
 .design__list {
   display: flex;
   flex-direction: row;
-  width: 3050px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  margin-bottom: 25px;
 }
 .design__list li {
   width: 500px;
@@ -425,9 +456,6 @@ img {
   height: auto;
 }
 @media screen and (max-width: 769px) {
-  .design__list {
-    width: 1550px;
-  }
   .design__list li {
     width: 250px;
   }
@@ -437,58 +465,6 @@ img {
   }
 }
 
-.simplebar-hover {
-  transform: none !important;
-}
-
-.simplebar-scrollbar:before {
-  display: none;
-}
-
-.simplebar-scrollbar {
-  will-change: transform;
-}
-
-.simplebar-track {
-  visibility: visible !important;
-}
-
-.simplebar-track.simplebar-horizontal {
-  background-color: #ede6d6;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
-  height: 7px;
-  position: absolute;
-  top: calc(50% - 3.5px);
-  transform: translateY(-50%);
-  min-width: 30px;
-  background-color: #928da3;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.simplebar-track.simplebar-horizontal .simplebar-scrollbar:hover,
-.simplebar-track.simplebar-horizontal:hover .simplebar-scrollbar {
-  background-color: #928da3;
-  opacity: 1 !important;
-}
-
-.simplebar-track.simplebar-horizontal {
-  border-radius: 5px;
-}
-
-@media screen and (max-width: 769px) {
-  .simplebar-track.simplebar-horizontal {
-    width: 90%;
-    bottom: -15px;
-  }
-  .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
-    width: 50px !important;
-  }
-}
 /* ========
     スキル
 ======== */
