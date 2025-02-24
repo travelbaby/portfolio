@@ -330,7 +330,6 @@ img {
   position: absolute;
   top: 50%;
   width: 100%;
-  transform: translateY(-50%);
 }
 @media screen and (max-width: 1000px) {
   .splide__arrows {
@@ -341,6 +340,7 @@ img {
 .splide__arrow {
   position: absolute;
   top: 50%;
+  transform: translateY(50%);
   width: 70px;
   border: none;
   padding: 10px;
