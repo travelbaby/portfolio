@@ -553,15 +553,14 @@ img {
 }
 
 .skill__item {
-  opacity: 0; /* 初期状態で非表示にする */
-  transform: translateY(20px); /* 下にずらしておく */
+  transform: translateY(0);
+  visibility: hidden;
 }
 
 .skill__item.fadeUp {
-  opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
   -webkit-animation: fadeUpAnime 1.5s ease-out;
-          animation: fadeUpAnime 1.5s ease-out; /* アニメーション適用 */
+          animation: fadeUpAnime 1.5s ease-out;
 }
 
 @-webkit-keyframes fadeUpAnime {

@@ -548,14 +548,17 @@ img {
 }
 
 .skill__item {
-    opacity: 0; /* 初期状態で非表示にする */
-    transform: translateY(20px); /* 下にずらしておく */
+    // opacity: 0;
+    transform: translateY(0);
+    visibility: hidden;
+    // will-change: opacity, transform;
 }
 
 .skill__item.fadeUp {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeUpAnime 1.5s ease-out; /* アニメーション適用 */
+    // opacity: 1;
+    // transform: translateY(0);
+    visibility: visible;
+    animation: fadeUpAnime 1.5s ease-out;
 }
 
 @keyframes fadeUpAnime {
@@ -572,7 +575,6 @@ img {
 
 .skill__item.active {
     z-index: 10;
-
     .skill__details {
         opacity: 1;
         visibility: visible;
