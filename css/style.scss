@@ -462,7 +462,7 @@ img {
         @media screen and (max-width: 769px) {
             margin-bottom: 10px;
             li {
-                width: 250px;
+                width: 350px;
             }
             li img {
                 max-width: 100%;
@@ -550,6 +550,7 @@ img {
 .skill__item.fadeUp {
     opacity: 1;
     transform: translateY(0);
+    animation: fadeUp 1.0s ease-out;
 }
 
 .skill__item.active {
@@ -596,13 +597,14 @@ img {
         visibility: hidden;
         transition: all 1s;
         transform: translateY(150px);
+        margin-bottom: 10rem;
 
         @media screen and (max-width: $break-point) {
             flex-direction: column;
             padding: 25px 20px;
         }
         @media screen and (max-width: $break-pointTb) {
-            
+            margin-bottom: 3rem;
         }
     }
 

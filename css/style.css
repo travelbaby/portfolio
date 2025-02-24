@@ -455,7 +455,7 @@ img {
     margin-bottom: 10px;
   }
   .design__list li {
-    width: 250px;
+    width: 350px;
   }
   .design__list li img {
     max-width: 100%;
@@ -555,6 +555,8 @@ img {
 .skill__item.fadeUp {
   opacity: 1;
   transform: translateY(0);
+  -webkit-animation: fadeUp 1s ease-out;
+          animation: fadeUp 1s ease-out;
 }
 
 .skill__item.active {
@@ -616,11 +618,17 @@ img {
   visibility: hidden;
   transition: all 1s;
   transform: translateY(150px);
+  margin-bottom: 10rem;
 }
 @media screen and (max-width: 1000px) {
   .about__wrapper {
     flex-direction: column;
     padding: 25px 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .about__wrapper {
+    margin-bottom: 3rem;
   }
 }
 .about__image {

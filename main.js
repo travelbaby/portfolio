@@ -196,7 +196,7 @@ function moveAnimation() {
         const scroll = window.scrollY || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight;
 
-        if (scroll >= elemPos - windowHeight + 50) {
+        if (scroll >= elemPos - windowHeight + 100) {
             if (skillItems.length > 0 && animeFlag) {
                 animeFlag = false;
                 const rnd = Math.floor(Math.random() * skillItems.length);
@@ -209,7 +209,7 @@ function moveAnimation() {
                 setTimeout(() => {
                     animeFlag = true;
                     randomScrollAnime();
-                }, 100);
+                }, 350);
             }
         } else {
             animeFlag = true;
@@ -219,7 +219,9 @@ function moveAnimation() {
 }
 window.addEventListener('scroll', moveAnimation);
 
+/////////////////////
 //skillのアコーディオン
+/////////////////////
 document.addEventListener('DOMContentLoaded', function () {
     const skillItems = document.querySelectorAll('.skill__item');
 
