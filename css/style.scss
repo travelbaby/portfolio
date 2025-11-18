@@ -315,6 +315,7 @@ img {
     &__slide img {
         width: 600px;
         height: auto;
+        aspect-ratio: 10 / 6;
         border-radius: $radius;
 
         @media screen and (max-width: $break-point) {

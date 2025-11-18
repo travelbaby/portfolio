@@ -309,6 +309,7 @@ img {
 .works__slide img {
   width: 600px;
   height: auto;
+  aspect-ratio: 10/6;
   border-radius: 0.6rem;
 }
 @media screen and (max-width: 1000px) {
