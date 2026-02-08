@@ -20,6 +20,11 @@ html {
 
 body {
   font-family: "Zen Kaku Gothic New";
+  background: linear-gradient(-137deg, rgba(176, 138, 58, 0.2) 1%, rgba(255, 255, 255, 0.12) 50%, rgba(136, 141, 151, 0.3) 80%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 li {
@@ -186,6 +191,26 @@ img {
   font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
+@supports (-webkit-touch-callout: none) {
+  body {
+    position: relative;
+    background: none;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(-137deg, rgba(176, 138, 58, 0.2) 1%, rgba(255, 255, 255, 0.12) 50%, rgba(136, 141, 151, 0.3) 80%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+  .main {
+    background: transparent;
+  }
+}
 .hero {
   background-color: rgba(255, 255, 255, 0.36);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.36));
@@ -405,6 +430,14 @@ button {
   flex-wrap: wrap;
   gap: 12px;
   margin: 16px 0 24px;
+}
+.works__empty {
+  display: none;
+  text-align: left;
+  color: #111C2F;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin: 24px 0;
 }
 .works__filter {
   padding: 6px 18px;

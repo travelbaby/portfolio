@@ -30,6 +30,11 @@ html {
 }
 body {
     font-family: list.nth($font-stack, 1);
+    background: $bg_color;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 li {
@@ -210,6 +215,29 @@ img {
     background-position: center;
     padding-top: 140px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        position: relative;
+        background: none;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: $bg_color;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+    }
+
+    .main {
+        background: transparent;
+    }
 }
 
 
@@ -454,6 +482,15 @@ button {
         flex-wrap: wrap;
         gap: 12px;
         margin: 16px 0 24px;
+    }
+
+    &__empty {
+        display: none;
+        text-align: left;
+        color: $main_color;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        margin: 24px 0;
     }
 
     &__filter {

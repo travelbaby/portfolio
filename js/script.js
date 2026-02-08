@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".works__filter");
     const worksCards = Array.from(document.querySelectorAll(".works-card"));
     const moreBtn = document.querySelector(".works__more .btn");
+    const worksEmpty = document.querySelector(".works__empty");
     let currentFilter = "all";
     let isExpanded = false;
 
@@ -103,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 moreBtn.style.display = "none";
                 moreBtn.setAttribute("aria-hidden", "true");
             }
+        }
+
+        if (worksEmpty) {
+            const shouldShow = currentFilter === "closed" && filtered.length === 0;
+            worksEmpty.style.display = shouldShow ? "block" : "none";
+            worksEmpty.setAttribute("aria-hidden", shouldShow ? "false" : "true");
         }
     };
 
