@@ -8,6 +8,26 @@
   --font-title-note-size-sp: 12px;
 }
 
+.fadeup-card {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fadeup-card.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeup-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

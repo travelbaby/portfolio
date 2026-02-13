@@ -137,3 +137,48 @@ document.addEventListener("DOMContentLoaded", () => {
         applyFilter();
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeUpCards = Array.from(
+        document.querySelectorAll(".works-card, .skills-card, .wp-card")
+    );
+    if (!fadeUpCards.length) return;
+
+    const cardGroups = new Map();
+    fadeUpCards.forEach((card) => {
+        const group = card.closest(".works__grid, .skills__grid, .wp__grid") || document.body;
+        if (!cardGroups.has(group)) {
+            cardGroups.set(group, []);
+        }
+        cardGroups.get(group).push(card);
+    });
+
+    cardGroups.forEach((cards) => {
+        cards.forEach((card, index) => {
+            card.classList.add("fadeup-card");
+            card.style.transitionDelay = `${index * 0.12}s`;
+        });
+    });
+
+    if (!("IntersectionObserver" in window)) {
+        fadeUpCards.forEach((card) => card.classList.add("is-visible"));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                currentObserver.unobserve(entry.target);
+            });
+        },
+        {
+            root: null,
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.2,
+        }
+    );
+
+    fadeUpCards.forEach((card) => observer.observe(card));
+});
