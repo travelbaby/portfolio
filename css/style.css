@@ -1124,8 +1124,7 @@ button {
   .flow__steps::before {
     top: calc(var(--flow-circle-size) / 2);
     bottom: calc(var(--flow-circle-size) / 2);
-    left: calc(var(--flow-circle-size) / 2);
-    right: auto;
+    left: 50%;
     width: 1px;
     height: 75%;
     z-index: -1;
@@ -1134,7 +1133,7 @@ button {
     text-align: left;
     display: flex;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
   }
   .flow-step__card {
     height: auto;
@@ -1151,6 +1150,8 @@ button {
     margin-top: 0;
     flex: 1;
     background-color: #fff;
+    width: 100%;
+    text-align: center;
   }
   .wp__grid {
     grid-template-columns: 1fr;
@@ -1281,6 +1282,7 @@ button {
   }
   .hero {
     padding: 30px 20px;
+    margin-bottom: 50px;
     width: calc(100% - 60px);
     background: rgba(255, 255, 255, 0.6);
   }
@@ -1367,4 +1369,44 @@ button {
     display: block;
     padding-bottom: 16px;
   }
+}  margin-top: 8px;
+  }
+  .works__filter {
+    width: 46%;
+    flex-shrink: 0;
+  }
+  .service-card__icon {
+    width: 120px;
+    height: 120px;
+  }
+  .service-card__title {
+    font-size: 22px;
+  }
+  .service-card__list {
+    font-size: 16px;
+  }
+  .skills-card {
+    padding: 16px;
+    font-size: 16px;
+  }
+  .skills-card__title {
+    margin-bottom: 8px;
+  }
+  .wp .section {
+    padding-top: 0;
+  }
+  .wp__grid {
+    margin-top: 16px;
+  }
+  #profile .section {
+    padding-top: 0;
+  }
+  .pf__title {
+    text-align: center;
+    border: none;
+    margin-inline: auto;
+    display: block;
+    padding-bottom: 16px;
+  }
 }
+/*# sourceMappingURL=style.css.map */
