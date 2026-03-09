@@ -1537,6 +1537,10 @@ button {
         &__list {
             font-size: 16px;
         }
+        &__note {
+            padding-left: 12px;
+            justify-content: flex-start;
+        }
     }
     .skills-card {
         padding: 16px;

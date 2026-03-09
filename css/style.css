@@ -1346,44 +1346,9 @@ button {
   .service-card__list {
     font-size: 16px;
   }
-  .skills-card {
-    padding: 16px;
-    font-size: 16px;
-  }
-  .skills-card__title {
-    margin-bottom: 8px;
-  }
-  .wp .section {
-    padding-top: 0;
-  }
-  .wp__grid {
-    margin-top: 16px;
-  }
-  #profile .section {
-    padding-top: 0;
-  }
-  .pf__title {
-    text-align: center;
-    border: none;
-    margin-inline: auto;
-    display: block;
-    padding-bottom: 16px;
-  }
-}  margin-top: 8px;
-  }
-  .works__filter {
-    width: 46%;
-    flex-shrink: 0;
-  }
-  .service-card__icon {
-    width: 120px;
-    height: 120px;
-  }
-  .service-card__title {
-    font-size: 22px;
-  }
-  .service-card__list {
-    font-size: 16px;
+  .service-card__note {
+    padding-left: 12px;
+    justify-content: flex-start;
   }
   .skills-card {
     padding: 16px;
@@ -1409,4 +1374,3 @@ button {
     padding-bottom: 16px;
   }
 }
-/*# sourceMappingURL=style.css.map */
