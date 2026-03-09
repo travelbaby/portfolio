@@ -8,26 +8,6 @@
   --font-title-note-size-sp: 12px;
 }
 
-.fadeup-card {
-  opacity: 0;
-  transform: translate3d(0, 36px, 0);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-
-.fadeup-card.is-visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fadeup-card {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -662,6 +642,25 @@ button {
   margin-top: 36px;
 }
 
+.fadeup-card {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fadeup-card.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeup-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 .skills-card {
   background: #fff;
   border-radius: 20px;
@@ -728,6 +727,9 @@ button {
 
 .flow-step {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .flow-step__num {
   width: var(--flow-circle-size);
@@ -751,7 +753,9 @@ button {
   background: rgba(255, 255, 255, 0.2);
   padding: 16px;
   margin-top: 18px;
-  height: 156px;
+  min-height: 156px;
+  height: auto;
+  flex: 1;
 }
 .flow-step__title {
   font-size: 18px;
@@ -1124,6 +1128,7 @@ button {
     right: auto;
     width: 1px;
     height: 75%;
+    z-index: -1;
   }
   .flow-step {
     text-align: left;
@@ -1132,7 +1137,8 @@ button {
     align-items: flex-start;
   }
   .flow-step__card {
-    height: fit-content;
+    height: auto;
+    min-height: 0;
     padding: 8px;
   }
   .flow-step__num {
@@ -1144,6 +1150,7 @@ button {
   .flow-step__card {
     margin-top: 0;
     flex: 1;
+    background-color: #fff;
   }
   .wp__grid {
     grid-template-columns: 1fr;
