@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B08A3A">
     <title>Akane's Portfolio - Webコーダーakaneのプロフィール</title>
     <link rel="icon" href="./img/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -32,12 +33,19 @@
     <header id="header" class="header">
         <nav class="nav">
             <p class="nav__title">Akane’s Portfolio</p>
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#works">Works</a></li>
-                <li class="nav__item"><a href="#services">Services</a></li>
-                <li class="nav__item"><a href="#profile">Profile</a></li>
-                <li class="nav__item"><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav__controls">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#works">Works</a></li>
+                    <li class="nav__item"><a href="#services">Services</a></li>
+                    <li class="nav__item"><a href="#profile">Profile</a></li>
+                    <li class="nav__item"><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="language-switch language-switch--desktop" aria-label="Language switch">
+                    <button class="language-switch__btn is-active" type="button" data-lang="ja" aria-pressed="true">JA</button>
+                    <span class="language-switch__separator" aria-hidden="true">/</span>
+                    <button class="language-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -54,23 +62,28 @@
             <li class="nav__item"><a href="#profile">Profile</a></li>
             <li class="nav__item"><a href="#contact">Contact</a></li>
         </ul>
+        <div class="language-switch language-switch--mobile" aria-label="Language switch">
+            <button class="language-switch__btn is-active" type="button" data-lang="ja" aria-pressed="true">JA</button>
+            <span class="language-switch__separator" aria-hidden="true">/</span>
+            <button class="language-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
     </div>
 
 
 
     <main id="main" class="main">
         <div class="hero">
-            <p class="hero__role">Web corder / WordPress</p>
+            <p class="hero__role" data-i18n="hero.role">Web coder / WordPress</p>
             <h1 class="hero__title">
                 Akane Kurihara
             </h1>
-            <p class="hero__copy">
+            <p class="hero__copy" data-i18n="hero.copy">
                 WordPressとLPの<br>
                 <span class="hero__copy--bold">実装・保守</span>まで対応します。
             </p>
-            <p class="hero__feature hero__feature--pc">WordPress / LP保守運用 | コミュニケーション重視 | 返信が早い（3時間以内目安）</p>
-            <p class="hero__feature hero__feature--sp">WordPress / LP保守運用<br>コミュニケーション重視<br>返信が早い（3時間以内目安）</p>
-            <p class="hero__feature">ちょっとした修正なども気軽にご相談ください！</p>
+            <p class="hero__feature hero__feature--pc" data-i18n="hero.featurePc">WordPress / LP保守運用 | コミュニケーション重視 | 返信が早い（3時間以内目安）</p>
+            <p class="hero__feature hero__feature--sp" data-i18n="hero.featureSp">WordPress / LP保守運用<br>コミュニケーション重視<br>返信が早い（3時間以内目安）</p>
+            <p class="hero__feature" data-i18n="hero.note">ちょっとした修正なども気軽にご相談ください！</p>
             <ul class="hero__links">
                 <li class="hero__contact"><a href="#contact">Contact</a></li>
                 <li class="hero__works"><a href="#works">View Works</a></li>
@@ -85,159 +98,159 @@
                     <button class="works__filter is-active" type="button" data-filter="all">All</button>
                     <button class="works__filter" type="button" data-filter="site">Site</button>
                     <button class="works__filter" type="button" data-filter="lp">LP</button>
-                    <button class="works__filter" type="button" data-filter="closed">非公開</button>
+                    <button class="works__filter" type="button" data-filter="closed" data-i18n="works.filter.closed">非公開</button>
                     <!-- Drive / Notion / Dropbox -->
                 </div>
-                <p class="works__empty" aria-live="polite" aria-hidden="true">現在準備中です。<br>非公開案件多数あります。<br>お気軽にお問い合わせください。</p>
+                <p class="works__empty" aria-live="polite" aria-hidden="true" data-i18n="works.empty">現在準備中です。<br>非公開案件多数あります。<br>お気軽にお問い合わせください。</p>
                 <div class="works__grid">
                     <!-- wlens -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/wlens.webp" alt="WLENS サイトのサムネイル" loading="lazy">
+                            <img src="./img/wlens.webp" alt="WLENS サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.wlens.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズ販売サイト<br>TOPページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.wlens.title">コンタクトレンズ販売サイト<br>TOPページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link"  href="https://www.wlens.jp/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズサイトTOPページを見る">サイトを見る</a>
+                            <a class="works-card__link"  href="https://www.wlens.jp/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズサイトTOPページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.wlens.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- Dream Gate -->
                     <article class="works-card" data-category="lp">
                         <div class="works-card__thumb">
-                            <img src="./img/dreamgate.webp" alt="イベントページのサムネイル" loading="lazy">
+                            <img src="./img/dreamgate.webp" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.dreamgate.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--lp">LP</span>
                             </div>
-                            <h3 class="works-card__title">イベントページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.dreamgate.title">イベントページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・Figmaのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.figma">・Figmaのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://kpopdreamgate.com/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="イベントページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://kpopdreamgate.com/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="イベントページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.dreamgate.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- and parade -->
                     <article class="works-card" data-category="lp">
                         <div class="works-card__thumb">
-                            <img src="./img/andparade.webp" alt="イベントページのサムネイル" loading="lazy">
+                            <img src="./img/andparade.webp" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.andparade.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--lp">LP</span>
                             </div>
-                            <h3 class="works-card__title">イベントページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.andparade.title">イベントページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・Figmaのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.figma">・Figmaのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://andparade.com/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズ特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://andparade.com/" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズ特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.andparade.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- 乱視カラコン -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/ranshi.webp" alt="特集ページのサムネイル" loading="lazy">
+                            <img src="./img/ranshi.webp" alt="特集ページのサムネイル" loading="lazy" data-i18n-attr="alt:works.ranshi.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズ販売サイト<br>特集ページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.ranshi.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/ranshi2" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズ特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://www.wlens.jp/view/page/ranshi2" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="コンタクトレンズ特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.ranshi.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- 就活カラコン -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/shukatsu.webp" alt="就活カラコン特集ページのサムネイル" loading="lazy">
+                            <img src="./img/shukatsu.webp" alt="就活カラコン特集ページのサムネイル" loading="lazy" data-i18n-attr="alt:works.shukatsu.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズサイト特集ページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.shukatsu.title">コンタクトレンズサイト特集ページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link"href="https://www.wlens.jp/view/page/shukatulens" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="就活カラコン特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link"href="https://www.wlens.jp/view/page/shukatulens" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="就活カラコン特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.shukatsu.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- iamme -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/iamme.webp" alt="IamMe特設サイトのサムネイル" loading="lazy">
+                            <img src="./img/iamme.webp" alt="IamMe特設サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.iamme.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズ販売サイト<br>特集ページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.iamme.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/shohiniamme-2" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://www.wlens.jp/view/page/shohiniamme-2" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.iamme.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- 980 -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/page980.webp" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy">
+                            <img src="./img/page980.webp" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.page980.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズ販売サイト<br>特集ページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.page980.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/campaign-wave980" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://www.wlens.jp/view/page/campaign-wave980" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.page980.aria">サイトを見る</a>
                         </div>
                     </article>
                     <!-- wave -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/wavecp.webp" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy">
+                            <img src="./img/wavecp.webp" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.wavecp.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
                                 <span class="works-card__tag works-card__tag--site">Site</span>
                             </div>
-                            <h3 class="works-card__title">コンタクトレンズ販売サイト<br>特集ページ</h3>
+                            <h3 class="works-card__title" data-i18n="works.wavecp.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
                             <ul class="works-card__list">
-                                <li>・コーディング</li>
-                                <li>・XDのカンプから実装</li>
+                                <li data-i18n="works.task.coding">・コーディング</li>
+                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
                             </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/wavecp2411" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る">サイトを見る</a>
+                            <a class="works-card__link" href="https://www.wlens.jp/view/page/wavecp2411" target="_blank" rel="noopener noreferrer" loading="lazy" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.wavecp.aria">サイトを見る</a>
                         </div>
                     </article>
 
 
                 </div>
                 <div class="works__more">
-                    <button class="btn btn--outline" type="button">View More</button>
+                    <button class="btn btn--outline" type="button" data-i18n="works.more">View More</button>
                 </div>
             </div>
         </section>
 
         <section id="services" class="services section">
             <div class="section__inner">
-                <h2 class="title">Services<br>
+                <h2 class="title" data-i18n="services.title">Services<br>
                     <span class="title__note">対応可能な業務領域</span>
                 </h2>
                 <div class="services__grid">
@@ -248,12 +261,12 @@
                         </div>
                         <h3 class="service-card__title">WordPress</h3>
                         <ul class="service-card__list">
-                            <li>・独自テーマの新規開発</li>
-                            <li>・静的HTML→WordPress化</li>
-                            <li>・既存テーマの改修</li>
-                            <li>・動的サイトの構築</li>
-                            <li>・更新しやすい設計（ACF/CPTでCMS化）</li>
-                            <li>・保守／運用</li>
+                            <li data-i18n="services.wp.item01">・独自テーマの新規開発</li>
+                            <li data-i18n="services.wp.item02">・静的HTML→WordPress化</li>
+                            <li data-i18n="services.wp.item03">・既存テーマの改修</li>
+                            <li data-i18n="services.wp.item04">・動的サイトの構築</li>
+                            <li data-i18n="services.wp.item05">・更新しやすい設計（ACF/CPTでCMS化）</li>
+                            <li data-i18n="services.wp.item06">・保守／運用</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -263,35 +276,35 @@
                         </div>
                         <h3 class="service-card__title">HTML｜CSS｜JavaScript</h3>
                         <ul class="service-card__list">
-                            <li>・レスポンシブ対応</li>
-                            <li>・アニメーション実装</li>
-                            <li>・保守性の高い実装（SCSS／BEM記法）</li>
-                            <li>・ビルド環境（Gulp）での効率的開発</li>
-                            <li>・読み込み速度やSEOを意識</li>
+                            <li data-i18n="services.code.item01">・レスポンシブ対応</li>
+                            <li data-i18n="services.code.item02">・アニメーション実装</li>
+                            <li data-i18n="services.code.item03">・保守性の高い実装（SCSS／BEM記法）</li>
+                            <li data-i18n="services.code.item04">・ビルド環境（Gulp）での効率的開発</li>
+                            <li data-i18n="services.code.item05">・読み込み速度やSEOを意識</li>
                         </ul>
                     </div>
                 </div>
-                    <p class="service-card__note">その他にも解析用パラメータ／タグの設置、<br class="sp-only">make shop（ECプラットフォーム）、<br class="sp-only">Webflow（ノーコードツール）<br>の実務経験があります。</p>
+                    <p class="service-card__note" data-i18n="services.note">その他にも解析用パラメータ／タグの設置、<br class="sp-only">make shop（ECプラットフォーム）、<br class="sp-only">Webflow（ノーコードツール）<br>の実務経験があります。</p>
             </div>
         </section>
 
         <section class="skills section" id="skills">
             <div class="section__inner">
-                <h2 class="title">Skills<br>
+                <h2 class="title" data-i18n="skills.title">Skills<br>
                     <span class="title__note">使用技術・環境</span>
                 </h2>
                 <div class="skills__grid">
                     <div class="skills-card">
-                        <h3 class="skills-card__title">使用技術</h3>
+                        <h3 class="skills-card__title" data-i18n="skills.techTitle">使用技術</h3>
                         <ul class="skills-card__list">
-                            <li>HTML / CSS</li>
-                            <li>SCSS / BEM記法</li>
+                            <li>HTML / CSS(SCSS)</li>
+                            <li data-i18n="skills.tech.item02">BEM記法 / FLOCSS</li>
                             <li>JavaScript</li>
                             <li>WordPress</li>
                         </ul>
                     </div>
                     <div class="skills-card">
-                        <h3 class="skills-card__title">制作ツール / プラットフォーム</h3>
+                        <h3 class="skills-card__title" data-i18n="skills.toolsTitle">制作ツール / プラットフォーム</h3>
                         <ul class="skills-card__list">
                             <li>Visual Studio Code</li>
                             <li>Figma / Adobe XD / Photoshop</li>
@@ -307,36 +320,36 @@
 
         <section class="flow section" id="flow">
             <div class="section__inner">
-                <h2 class="title">Flow<br>
+                <h2 class="title" data-i18n="flow.title">Flow<br>
                     <span class="title__note">ご依頼の流れ</span>
                 </h2>
                 <div class="flow__steps">
                     <div class="flow-step">
                         <div class="flow-step__num">01</div>
                         <div class="flow-step__card">
-                            <h3 class="flow-step__title">ご相談・お見積り</h3>
-                            <p class="flow-step__text">まずはお気軽にご相談ください。<br>細かい修正なども承っております。</p>
+                            <h3 class="flow-step__title" data-i18n="flow.step01.title">ご相談・お見積り</h3>
+                            <p class="flow-step__text" data-i18n="flow.step01.text">まずはお気軽にご相談ください。<br>細かい修正なども承っております。</p>
                         </div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-step__num">02</div>
                         <div class="flow-step__card">
-                            <h3 class="flow-step__title">制作</h3>
-                            <p class="flow-step__text">進捗はこまめに共有します。<br>デザインは持ち込みや、<br>提携デザイナーのご紹介も<br>可能です。</p>
+                            <h3 class="flow-step__title" data-i18n="flow.step02.title">制作</h3>
+                            <p class="flow-step__text" data-i18n="flow.step02.text">進捗はこまめに共有します。<br>デザインは持ち込みや、<br>提携デザイナーのご紹介も<br>可能です。</p>
                         </div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-step__num">03</div>
                         <div class="flow-step__card">
-                            <h3 class="flow-step__title">確認・修正</h3>
-                            <p class="flow-step__text">初稿をご確認いただき、<br>フィードバックをもとに<br>調整していきます。</p>
+                            <h3 class="flow-step__title" data-i18n="flow.step03.title">確認・修正</h3>
+                            <p class="flow-step__text" data-i18n="flow.step03.text">初稿をご確認いただき、<br>フィードバックをもとに<br>調整していきます。</p>
                         </div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-step__num">04</div>
                         <div class="flow-step__card">
-                            <h3 class="flow-step__title">納品・運用</h3>
-                            <p class="flow-step__text">納品後の運用・保守のご相談も<br>承っております。</p>
+                            <h3 class="flow-step__title" data-i18n="flow.step04.title">納品・運用</h3>
+                            <p class="flow-step__text" data-i18n="flow.step04.text">納品後の運用・保守のご相談も<br>承っております。</p>
                         </div>
                     </div>
                 </div>
@@ -360,9 +373,9 @@
                             </defs>
                             </svg>
                         </div>
-                        <h3 class="wp-card__title">コミュニケーション重視</h3>
-                        <p class="wp-card__text">読み込まなくても理解できる、<br>整理された文章を心がけています。</p>
-                        <p class="wp-card__text">手戻りを減らすため、<br>早めの共有と確認を徹底します。</p>
+                        <h3 class="wp-card__title" data-i18n="policy.communication.title">コミュニケーション重視</h3>
+                        <p class="wp-card__text" data-i18n="policy.communication.text01">読み込まなくても理解できる、<br>整理された文章を心がけています。</p>
+                        <p class="wp-card__text" data-i18n="policy.communication.text02">手戻りを減らすため、<br>早めの共有と確認を徹底します。</p>
                     </div>
                     <div class="wp-card">
                         <div class="wp-card__icon">
@@ -376,9 +389,9 @@
                             </defs>
                             </svg>
                         </div>
-                        <h3 class="wp-card__title">細部までこだわる実装</h3>
-                        <p class="wp-card__text">見た目の再現だけでなく、崩れにくく<br>運用しやすい実装を意識します。</p>
-                        <p class="wp-card__text">デザインの意図を汲み取り、<br>丁寧な実装を大切にしています。</p>
+                        <h3 class="wp-card__title" data-i18n="policy.detail.title">細部までこだわる実装</h3>
+                        <p class="wp-card__text" data-i18n="policy.detail.text01">見た目の再現だけでなく、崩れにくく<br>運用しやすい実装を意識します。</p>
+                        <p class="wp-card__text" data-i18n="policy.detail.text02">デザインの意図を汲み取り、<br>丁寧な実装を大切にしています。</p>
                     </div>
                     <div class="wp-card">
                         <div class="wp-card__icon">
@@ -392,9 +405,9 @@
                             </defs>
                             </svg>
                         </div>
-                        <h3 class="wp-card__title">修正・運用まで丁寧に</h3>
-                        <p class="wp-card__text">納品形式（ZIP/反映）や<br>軽微な調整なども柔軟に合わせます。</p>
-                        <p class="wp-card__text">変更点などは簡単なメモにまとめ、<br>引き継ぎもスムーズにします。</p>
+                        <h3 class="wp-card__title" data-i18n="policy.support.title">修正・運用まで丁寧に</h3>
+                        <p class="wp-card__text" data-i18n="policy.support.text01">納品形式（ZIP/反映）や<br>軽微な調整なども柔軟に合わせます。</p>
+                        <p class="wp-card__text" data-i18n="policy.support.text02">変更点などは簡単なメモにまとめ、<br>引き継ぎもスムーズにします。</p>
                     </div>
                 </div>
             </div>
@@ -406,11 +419,11 @@
                 </h2>
                 <div class="pf__card">
                     <div class="pf__image">
-                        <img src="img/about.webp" alt="プロフィール写真" loading="lazy">
+                        <img src="img/about.webp" alt="プロフィール写真" loading="lazy" data-i18n-attr="alt:profile.imageAlt">
                     </div>
                     <div class="pf__body">
-                        <h3 class="pf__title">Webコーダーとして、<br class="sp-only">LP制作・WordPress実装を中心に<br class="sp-only">活動しています。</h3>
-                        <p class="pf__text">
+                        <h3 class="pf__title" data-i18n="profile.title">Webコーダーとして、<br class="sp-only">LP制作・WordPress実装を中心に<br class="sp-only">活動しています。</h3>
+                        <p class="pf__text" data-i18n="profile.text">
                             前職の看護師で培った、確認を怠らない姿勢と<br class="pc-only">
                             丁寧なコミュニケーションが強みです。<br>
                             学習環境が整っていたことをきっかけにWeb制作を始め、<br class="pc-only">
@@ -418,7 +431,7 @@
                             返信は原則、稼働日は3時間以内／非稼働日も当日中に対応しています。<br>
                             お気軽にご相談ください。
                         </p>
-                        <a class="btn btn--primary" href="#contact">まずは無料相談</a>
+                        <a class="btn btn--primary" href="#contact" data-i18n="profile.cta">まずは無料相談</a>
                     </div>
                 </div>
             </div>
@@ -475,13 +488,14 @@
     <footer class="footer">
         <p class="page-top">
             <a href="#">
-                <img src="./img/to-top.png" alt="トップへ戻るボタン">
+                <img src="./img/to-top.png" alt="トップへ戻るボタン" data-i18n-attr="alt:common.toTopAlt">
             </a>
         </p>
         <p class="footer__copy">
             &copy; 2026 Akane's Portfolio
         </p>
     </footer>
+    <script type="text/javascript" src="./js/i18n.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 

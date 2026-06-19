@@ -1374,3 +1374,54 @@ button {
     padding-bottom: 16px;
   }
 }
+
+.nav__controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Montserrat";
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
+}
+
+.language-switch__btn {
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+
+.language-switch__btn.is-active {
+  color: #111C2F;
+  font-weight: 600;
+}
+
+.language-switch__btn:hover {
+  color: #B08A3A;
+}
+
+.language-switch__separator {
+  color: #c4c8cf;
+}
+
+.language-switch--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header .language-switch--desktop {
+    display: none;
+  }
+
+  #mask.open .language-switch--mobile {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+  }
+}
