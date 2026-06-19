@@ -6,7 +6,18 @@ links.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const href = link.getAttribute('href');
+
+        if (href === '#') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+            return;
+        }
+
         const targetSection = document.querySelector(href);
+        if (!targetSection) return;
+
         const sectionTop = targetSection.getBoundingClientRect().top;
         const currentPos = window.scrollY;
         const gap = 96;
@@ -17,6 +28,22 @@ links.forEach((link) => {
         });
     });
 });
+
+/////////////
+//トップへ戻るボタンの表示切り替え
+/////////////
+const pageTop = document.querySelector('.page-top');
+
+if (pageTop) {
+    const updatePageTop = () => {
+        const isVisible = window.scrollY > 300;
+        pageTop.classList.toggle('UpMove', isVisible);
+        pageTop.classList.toggle('DownMove', !isVisible);
+    };
+
+    window.addEventListener('scroll', updatePageTop, { passive: true });
+    updatePageTop();
+}
 
 /////////////
 //ハンバーガー

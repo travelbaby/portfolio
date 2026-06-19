@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Jx2obo8beo-AcPpVUGY5f8qekHrtzJ-A7KP_zw33EdA" />
     <title>Akane's Portfolio - Webコーダー栗原茜のプロフィール｜WordPress・LP実装・保守運用</title>
     <link rel="icon" href="./img/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
@@ -16,17 +17,22 @@
     <meta property="og:url" content="https://travelbaby.github.io/portfolio/">
     <meta property="og:site_name" content="Akane's Portfolio - Webコーダー栗原茜のプロフィール｜WordPress・LP実装・保守運用">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
     <meta property="og:image" content="https://travelbaby.github.io/portfolio/img/ogp_image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Webコーダー栗原茜のポートフォリオ">
         <!-- Twitterカード設定 -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Akane's Portfolio - Webコーダー栗原茜のプロフィール｜WordPress・LP実装・保守運用">
+    <meta name="twitter:description" content="WordPress改修・LP実装・既存サイト修正・保守運用に対応するWebコーダー栗原茜のポートフォリオサイトです。Figma / XDデザインからのコーディング、ACFを用いたCMS化、レスポンシブ対応も可能です。">
+    <meta name="twitter:image" content="https://travelbaby.github.io/portfolio/img/ogp_image.png">
+    <meta name="twitter:image:alt" content="Webコーダー栗原茜のポートフォリオ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400&family=Montserrat:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/ress.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -73,8 +79,8 @@
 
     <main id="main" class="main">
         <div class="hero">
-            <p class="hero__role" data-i18n="hero.role">Web coder / WordPress</p>
             <h1 class="hero__title">
+                <span class="hero__role" data-i18n="hero.role">WordPress・LP実装・保守運用</span>
                 Akane Kurihara
             </h1>
             <p class="hero__copy" data-i18n="hero.copy">
@@ -106,7 +112,7 @@
                     <!-- wlens -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/wlens.webp" alt="WLENS サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.wlens.alt">
+                            <img src="./img/wlens.webp" width="636" height="382" alt="WLENS サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.wlens.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -123,7 +129,7 @@
                     <!-- Dream Gate -->
                     <article class="works-card" data-category="lp">
                         <div class="works-card__thumb">
-                            <img src="./img/dreamgate.webp" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.dreamgate.alt">
+                            <img src="./img/dreamgate.webp" width="477" height="287" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.dreamgate.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -140,7 +146,7 @@
                     <!-- and parade -->
                     <article class="works-card" data-category="lp">
                         <div class="works-card__thumb">
-                            <img src="./img/andparade.webp" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.andparade.alt">
+                            <img src="./img/andparade.webp" width="477" height="287" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.andparade.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -157,7 +163,7 @@
                     <!-- 乱視カラコン -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/ranshi.webp" alt="乱視カラコン特集" loading="lazy" data-i18n-attr="alt:works.ranshi.alt">
+                            <img src="./img/ranshi.webp" width="477" height="287" alt="乱視カラコン特集" loading="lazy" data-i18n-attr="alt:works.ranshi.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -174,7 +180,7 @@
                     <!-- 就活カラコン -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/shukatsu.webp" alt="就活カラコン特集ページのサムネイル" loading="lazy" data-i18n-attr="alt:works.shukatsu.alt">
+                            <img src="./img/shukatsu.webp" width="477" height="287" alt="就活カラコン特集ページのサムネイル" loading="lazy" data-i18n-attr="alt:works.shukatsu.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -191,7 +197,7 @@
                     <!-- iamme -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/iamme.webp" alt="IamMe特設サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.iamme.alt">
+                            <img src="./img/iamme.webp" width="477" height="287" alt="IamMe特設サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.iamme.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -208,7 +214,7 @@
                     <!-- 980 -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/page980.webp" alt="980円カラコン特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.page980.alt">
+                            <img src="./img/page980.webp" width="477" height="287" alt="980円カラコン特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.page980.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -225,7 +231,7 @@
                     <!-- wave -->
                     <article class="works-card" data-category="site">
                         <div class="works-card__thumb">
-                            <img src="./img/wavecp.webp" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.wavecp.alt">
+                            <img src="./img/wavecp.webp" width="477" height="287" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.wavecp.alt">
                         </div>
                         <div class="works-card__body">
                             <div class="works-card__meta">
@@ -257,7 +263,7 @@
                     <div class="service-card">
                         <p class="service-card__num">01</p>
                         <div class="service-card__icon">
-                            <img src="./img/icon_wp.webp" alt="WordPress">
+                            <img src="./img/icon_wp.webp" width="400" height="400" alt="WordPress">
                         </div>
                         <h3 class="service-card__title">WordPress</h3>
                         <ul class="service-card__list">
@@ -272,7 +278,7 @@
                     <div class="service-card">
                         <p class="service-card__num">02</p>
                         <div class="service-card__icon">
-                            <img src="./img/icon_code.webp" alt="HTML">
+                            <img src="./img/icon_code.webp" width="400" height="400" alt="HTML">
                         </div>
                         <h3 class="service-card__title">HTML｜CSS｜JavaScript</h3>
                         <ul class="service-card__list">
@@ -419,7 +425,7 @@
                 </h2>
                 <div class="pf__card">
                     <div class="pf__image">
-                        <img src="img/about.webp" alt="プロフィール写真" loading="lazy" data-i18n-attr="alt:profile.imageAlt">
+                        <img src="img/about.webp" width="400" height="400" alt="プロフィール写真" loading="lazy" data-i18n-attr="alt:profile.imageAlt">
                     </div>
                     <div class="pf__body">
                         <h3 class="pf__title" data-i18n="profile.title">Webコーダーとして、<br class="sp-only">LP制作・WordPress実装を中心に<br class="sp-only">活動しています。</h3>
@@ -493,11 +499,10 @@
     </main>
 
     <footer class="footer">
-        <p class="page-top">
-            <a href="#">
-                <img src="./img/to-top.png" alt="トップへ戻るボタン" data-i18n-attr="alt:common.toTopAlt">
-            </a>
-        </p>
+        <a class="page-top" href="#" aria-label="ページ上部へ戻る">
+            <span class="page-top__arrow" aria-hidden="true"></span>
+            <span class="page-top__text">TOP</span>
+        </a>
         <p class="footer__copy">
             &copy; 2026 Akane's Portfolio
         </p>

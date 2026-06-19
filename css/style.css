@@ -26,7 +26,14 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid $sub_color;
+    outline-offset: 4px;
+}
 li {
   list-style: none;
 }
@@ -271,6 +278,7 @@ img {
   margin-bottom: 24px;
 }
 .hero__role {
+  display: block;
   font-size: var(--font-larger-size);
   color: #111C2F;
   font-family: "Montserrat";
@@ -1040,110 +1048,94 @@ button {
 
 .page-top {
   position: fixed;
-  right: 10px;
-  bottom: 50px;
-  z-index: 2;
-  opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s;
-}
-.page-top a {
-  width: 160px;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-@media screen and (max-width: 768px) {
-  .page-top a {
-    width: 120px;
-  }
-}
-.page-top a:hover::before {
-  content: "";
-  position: absolute;
-  left: 30%;
-  top: 30%;
-  border: 1px solid #fff;
-  width: 60px;
-  height: 60px;
+  right: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 900;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #111C2F;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(17, 28, 47, 0.22);
   border-radius: 50%;
-  opacity: 1;
-  -webkit-animation: circleAnime 1s forwards;
-          animation: circleAnime 1s forwards;
-}
-
-@-webkit-keyframes circleAnime {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes circleAnime {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-.page-top.UpMove {
-  -webkit-animation: UpAnime 0.5s forwards;
-          animation: UpAnime 0.5s forwards;
-  visibility: visible;
-  opacity: 1;
-}
-
-@-webkit-keyframes UpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes UpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.page-top.DownMove {
-  -webkit-animation: DownAnime 0.5s forwards;
-          animation: DownAnime 0.5s forwards;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 24px rgba(10, 16, 39, 0.14);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
 }
-
-@-webkit-keyframes DownAnime {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(100px);
+.page-top__arrow {
+  position: relative;
+  width: 16px;
+  height: 13px;
+}
+.page-top__arrow::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-top: 1.5px solid currentColor;
+  border-left: 1.5px solid currentColor;
+  transform: translateX(-50%) rotate(45deg);
+}
+.page-top__arrow::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  width: 1.5px;
+  height: 12px;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+.page-top__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+}
+.page-top:focus-visible {
+  outline: 2px solid #B08A3A;
+  outline-offset: 4px;
+}
+.page-top.UpMove {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.page-top.DownMove {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px);
+}
+@media (hover: hover) {
+  .page-top.UpMove:hover {
+    color: #B08A3A;
+    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(176, 138, 58, 0.55);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 12px 28px rgba(10, 16, 39, 0.18);
+    transform: translateY(-3px);
   }
 }
-
-@keyframes DownAnime {
-  from {
-    opacity: 1;
-    transform: translateY(0);
+@media screen and (max-width: 768px) {
+  .page-top {
+    width: 50px;
+    height: 50px;
   }
-  to {
-    opacity: 0;
-    transform: translateY(100px);
+  .page-top__text {
+    font-size: 9px;
   }
 }
 .footer {
