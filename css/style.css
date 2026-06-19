@@ -116,6 +116,12 @@ img {
   align-items: center;
 }
 
+.nav__controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .nav__item {
   font-size: var(--font-main-size);
   font-family: "Montserrat";
@@ -140,6 +146,36 @@ img {
 }
 .nav__item a:hover::after {
   transform: scale(1, 1);
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Montserrat";
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
+}
+
+.language-switch__btn {
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+.language-switch__btn.is-active {
+  color: #111C2F;
+  font-weight: 600;
+}
+.language-switch__btn:hover {
+  color: #B08A3A;
+}
+
+.language-switch__separator {
+  color: #c4c8cf;
+}
+
+.language-switch--mobile {
+  display: none;
 }
 
 .header.is-scrolled .nav {
@@ -480,7 +516,8 @@ button {
 .works-card__thumb img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   display: block;
 }
@@ -565,6 +602,8 @@ button {
 ======== */
 .services {
   background: rgba(255, 255, 255, 0.45);
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .services__grid {
@@ -632,7 +671,7 @@ button {
   color: #111C2F;
   display: flex;
   justify-content: center;
-  margin: 20px auto 0;
+  margin: 20px auto;
 }
 
 .skills__grid {
@@ -1028,7 +1067,18 @@ button {
   height: 60px;
   border-radius: 50%;
   opacity: 1;
-  animation: circleAnime 1s forwards;
+  -webkit-animation: circleAnime 1s forwards;
+          animation: circleAnime 1s forwards;
+}
+
+@-webkit-keyframes circleAnime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 @keyframes circleAnime {
@@ -1041,9 +1091,21 @@ button {
   }
 }
 .page-top.UpMove {
-  animation: UpAnime 0.5s forwards;
+  -webkit-animation: UpAnime 0.5s forwards;
+          animation: UpAnime 0.5s forwards;
   visibility: visible;
   opacity: 1;
+}
+
+@-webkit-keyframes UpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes UpAnime {
@@ -1057,9 +1119,21 @@ button {
   }
 }
 .page-top.DownMove {
-  animation: DownAnime 0.5s forwards;
+  -webkit-animation: DownAnime 0.5s forwards;
+          animation: DownAnime 0.5s forwards;
   opacity: 0;
   visibility: hidden;
+}
+
+@-webkit-keyframes DownAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100px);
+  }
 }
 
 @keyframes DownAnime {
@@ -1083,6 +1157,11 @@ button {
   padding-bottom: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .works__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 768px) {
   .section {
     padding: 50px 0;
@@ -1099,6 +1178,8 @@ button {
   }
   .works__filters {
     justify-content: center;
+    max-width: 450px;
+    margin-inline: auto;
   }
   .works__grid {
     grid-template-columns: 1fr;
@@ -1116,6 +1197,8 @@ button {
   .skills__grid {
     grid-template-columns: 1fr;
     margin-top: 16px;
+    max-width: 450px;
+    margin-inline: auto;
   }
   .flow__steps {
     grid-template-columns: 1fr;
@@ -1152,9 +1235,7 @@ button {
     background-color: #fff;
     width: 100%;
     text-align: center;
-  }
-  .wp__grid {
-    grid-template-columns: 1fr;
+    max-width: 450px;
   }
   .wp-card {
     padding: 16px;
@@ -1165,6 +1246,8 @@ button {
     align-items: center;
     padding: 10px;
     gap: 16px;
+    max-width: 450px;
+    margin-inline: auto;
   }
   .pf__image {
     width: 100%;
@@ -1205,6 +1288,9 @@ button {
     color: #B08A3A;
   }
   .header .nav__list {
+    display: none;
+  }
+  .header .language-switch--desktop {
     display: none;
   }
   .header.is-scrolled .nav {
@@ -1277,6 +1363,12 @@ button {
     margin-left: 0;
     font-size: 1rem;
   }
+  #mask.open .language-switch--mobile {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+  }
   .main {
     padding-top: 60px;
   }
@@ -1295,6 +1387,9 @@ button {
   }
   .hero__copy {
     font-size: 22px;
+  }
+  .hero__links {
+    justify-content: center;
   }
   .hero__feature {
     font-size: 14px;
@@ -1317,6 +1412,11 @@ button {
   .hero__feature--pc {
     display: none;
   }
+  .works-card {
+    width: 100%;
+    max-width: 450px;
+    margin-inline: auto;
+  }
   .works-card__thumb {
     padding: 10px 10px 0 10px;
   }
@@ -1335,6 +1435,10 @@ button {
   .works__filter {
     width: 46%;
     flex-shrink: 0;
+  }
+  .service-card {
+    max-width: 450px;
+    margin-inline: auto;
   }
   .service-card__icon {
     width: 120px;
@@ -1361,7 +1465,9 @@ button {
     padding-top: 0;
   }
   .wp__grid {
-    margin-top: 16px;
+    grid-template-columns: 1fr;
+    margin: 16px auto 0;
+    max-width: 450px;
   }
   #profile .section {
     padding-top: 0;
@@ -1374,54 +1480,4 @@ button {
     padding-bottom: 16px;
   }
 }
-
-.nav__controls {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.language-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: "Montserrat";
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: #9ca3af;
-}
-
-.language-switch__btn {
-  color: #9ca3af;
-  transition: color 0.2s ease;
-}
-
-.language-switch__btn.is-active {
-  color: #111C2F;
-  font-weight: 600;
-}
-
-.language-switch__btn:hover {
-  color: #B08A3A;
-}
-
-.language-switch__separator {
-  color: #c4c8cf;
-}
-
-.language-switch--mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .header .language-switch--desktop {
-    display: none;
-  }
-
-  #mask.open .language-switch--mobile {
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 4px;
-  }
-}
+/*# sourceMappingURL=style.css.map */

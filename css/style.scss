@@ -695,8 +695,9 @@ button {
 
 .services {
     background: rgba(255, 255, 255, 0.45);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
-
 .services__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -764,12 +765,6 @@ button {
             position: relative;
             padding-left: 12px;
 
-            // &::before {
-            //     content: '・';
-            //     position: absolute;
-            //     left: 0;
-            //     color: $sub_color;
-            // }
         }
     }
 
@@ -778,13 +773,9 @@ button {
         color: $main_color;
         display: flex;
         justify-content: center;
-        margin: 20px auto 0;
+        margin: 20px auto;
     }
 }
-
-// .skills {
-//     background: rgba(255, 255, 255, 0.55);
-// }
 
 .skills__grid {
     display: grid;
@@ -1263,6 +1254,12 @@ button {
     padding-bottom: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+    .works__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: $break-point) {
     .section {
         padding: 50px 0;
@@ -1283,6 +1280,8 @@ button {
 
     .works__filters {
         justify-content: center;
+        max-width: 450px;
+        margin-inline: auto;
     }
 
     .works__grid {
@@ -1305,6 +1304,8 @@ button {
     .skills__grid {
         grid-template-columns: 1fr;
         margin-top: 16px;
+        max-width: 450px;
+        margin-inline: auto;
     }
 
     .flow__steps {
@@ -1346,11 +1347,10 @@ button {
         background-color: #fff;
         width: 100%;
         text-align: center;
+        max-width: 450px;
     }
 
-    .wp__grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .wp-card {
         padding: 16px;
@@ -1362,6 +1362,8 @@ button {
         align-items: center;
         padding: 10px;
         gap: 16px;
+        max-width: 450px;
+        margin-inline:  auto;
     }
 
     .pf__image {
@@ -1530,6 +1532,9 @@ button {
         &__copy {
             font-size: 22px;
         }
+        &__links {
+            justify-content: center;
+        }
         &__feature {
             font-size: 14px;
             position: relative;
@@ -1553,6 +1558,9 @@ button {
         }
     }
     .works-card {
+        width: 100%;
+        max-width: 450px;
+        margin-inline: auto;
         &__thumb {
             padding: 10px 10px 0 10px;
         }
@@ -1576,6 +1584,8 @@ button {
         }
     }
     .service-card {
+        max-width: 450px;
+        margin-inline: auto;
         &__icon {
             width: 120px;
             height: 120px;
@@ -1602,7 +1612,9 @@ button {
         padding-top: 0;
     }
     .wp__grid {
-        margin-top: 16px;
+        grid-template-columns: 1fr;
+        margin: 16px auto 0;
+        max-width: 450px;
     }
     #profile .section {
         padding-top: 0;
