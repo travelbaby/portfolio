@@ -1,0 +1,11 @@
+{
+  "name": "travelbaby-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio website published with GitHub Pages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travelbaby/portfolio.git"
+  },
+  "homepage": "https://travelbaby.github.io/portfolio/"
+}
