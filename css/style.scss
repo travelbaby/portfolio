@@ -1428,11 +1428,11 @@ button {
     }
     .header {
         display: block;
-        width: 100%;
+        width: 90%;
         max-width: none;
-        left: 0;
-        transform: none;
-        padding: 8px 12px 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 0;
     }
 
     .header .nav {
@@ -1467,7 +1467,7 @@ button {
         display: block;
         position: fixed;
         top: 18px;
-        right: 20px;
+        right: 8%;
         width: 50px;
         height: 25px;
         z-index: 10000;

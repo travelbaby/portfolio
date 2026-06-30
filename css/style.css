@@ -26,14 +26,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 2px solid $sub_color;
-    outline-offset: 4px;
-}
+
 li {
   list-style: none;
 }
@@ -524,8 +517,7 @@ button {
 .works-card__thumb img {
   width: 100%;
   height: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5px;
   display: block;
 }
@@ -895,7 +887,6 @@ button {
   width: 100%;
   border-radius: 14px;
   display: block;
-  object-fit: cover;
 }
 
 .pf__body {
@@ -1064,7 +1055,7 @@ button {
   border: 1px solid rgba(17, 28, 47, 0.22);
   border-radius: 50%;
   -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 24px rgba(10, 16, 39, 0.14);
   opacity: 0;
   visibility: hidden;
@@ -1091,10 +1082,10 @@ button {
 .page-top__arrow::after {
   content: "";
   position: absolute;
-  top: 1px;
+  top: 3px;
   left: 50%;
   width: 1.5px;
-  height: 12px;
+  height: 10px;
   background: currentColor;
   transform: translateX(-50%);
 }
@@ -1109,18 +1100,21 @@ button {
   outline: 2px solid #B08A3A;
   outline-offset: 4px;
 }
+
 .page-top.UpMove {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
+
 .page-top.DownMove {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(16px);
 }
+
 @media (hover: hover) {
   .page-top.UpMove:hover {
     color: #B08A3A;
@@ -1265,11 +1259,11 @@ button {
   }
   .header {
     display: block;
-    width: 100%;
+    width: 90%;
     max-width: none;
-    left: 0;
-    transform: none;
-    padding: 8px 12px 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 0;
   }
   .header .nav {
     padding: 14px 16px;
@@ -1298,7 +1292,7 @@ button {
     display: block;
     position: fixed;
     top: 18px;
-    right: 20px;
+    right: 8%;
     width: 50px;
     height: 25px;
     z-index: 10000;
@@ -1473,4 +1467,5 @@ button {
     padding-bottom: 16px;
   }
 }
+
 /*# sourceMappingURL=style.css.map */
