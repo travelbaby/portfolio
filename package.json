@@ -10,7 +10,7 @@
   "homepage": "https://travelbaby.github.io/portfolio/",
   "scripts": {
     "dev": "sass --watch --poll css/style.scss:css/style.css",
-    "build": "sass css/style.scss:css/style.min.css --style=compressed"
+    "build": "sass css/style.scss:css/style.min.css --style=compressed --no-source-map"
   },
   "devDependencies": {
     "sass": "^1.101.0"
