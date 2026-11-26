@@ -1,35 +1,4 @@
 /////////////
-//スムーススクロール
-/////////////
-const links = document.querySelectorAll('a[href^="#"]');
-links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-
-        if (href === '#') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-            return;
-        }
-
-        const targetSection = document.querySelector(href);
-        if (!targetSection) return;
-
-        const sectionTop = targetSection.getBoundingClientRect().top;
-        const currentPos = window.scrollY;
-        const gap = 96;
-        const target = sectionTop + currentPos - gap;
-        window.scrollTo({
-            top: target,
-            behavior: 'smooth',
-        });
-    });
-});
-
-/////////////
 //トップへ戻るボタンの表示切り替え
 /////////////
 const pageTop = document.querySelector('.page-top');
@@ -49,32 +18,43 @@ if (pageTop) {
 //ハンバーガー
 /////////////
 document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector(".nav__list");
     const btn = document.querySelector(".toggle-btn");
     const mask = document.querySelector("#mask");
     const header = document.querySelector(".header");
 
-    if (!btn || !nav || !mask) return;
+    if (btn && mask) {
+        const setMenuOpen = (isOpen, restoreFocus = false) => {
+            btn.setAttribute("aria-expanded", String(isOpen));
+            btn.classList.toggle("open", isOpen);
+            mask.classList.toggle("open", isOpen);
+            if (restoreFocus) btn.focus({ preventScroll: true });
+        };
 
-    btn.addEventListener("click", () => {
-        nav.classList.toggle("open");
-        btn.classList.toggle("open");
-        mask.classList.toggle("open");
-    });
+        btn.addEventListener("click", () => {
+            setMenuOpen(btn.getAttribute("aria-expanded") === "false");
+        });
 
-    mask.addEventListener("click", () => {
-        nav.classList.remove("open");
-        btn.classList.remove("open");
-        mask.classList.remove("open");
-    });
+        mask.addEventListener("click", (event) => {
+            if (event.target.closest("a")) setMenuOpen(false, true);
+        });
 
-    nav.addEventListener("click", (e) => {
-        const link = e.target.closest("a");
-        if (!link) return;
-        nav.classList.remove("open");
-        btn.classList.remove("open");
-        mask.classList.remove("open");
-    });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && btn.getAttribute("aria-expanded") === "true") {
+                setMenuOpen(false, true);
+            }
+        });
+
+        document.addEventListener("focusin", (event) => {
+            if (!btn.contains(event.target) && !mask.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        });
+
+        const mobile = window.matchMedia("(max-width: 768px)");
+        mobile.addEventListener("change", () => {
+            if (!mobile.matches) setMenuOpen(false);
+        });
+    }
 
     if (header) {
         let triggerPoint = header.offsetHeight;
@@ -94,118 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         updateHeader();
     }
-
-    const filterButtons = document.querySelectorAll(".works__filter");
-    const worksCards = Array.from(document.querySelectorAll(".works-card"));
-    const moreBtn = document.querySelector(".works__more .btn");
-    const worksEmpty = document.querySelector(".works__empty");
-    let currentFilter = "all";
-    let isExpanded = false;
-
-    const getMaxVisible = () => {
-        return window.matchMedia("(max-width: 768px)").matches ? 2 : 6;
-    };
-
-    const applyFilter = () => {
-        const filtered = worksCards.filter((card) => {
-            if (currentFilter === "all") return true;
-            return card.dataset.category === currentFilter;
-        });
-
-        worksCards.forEach((card) => {
-            card.style.display = "none";
-        });
-
-        const maxVisible = isExpanded ? filtered.length : getMaxVisible();
-        filtered.forEach((card, index) => {
-            if (index < maxVisible) {
-                card.style.display = "";
-            }
-        });
-
-        if (moreBtn) {
-            if (filtered.length > maxVisible) {
-                moreBtn.style.display = "inline-flex";
-                moreBtn.setAttribute("aria-hidden", "false");
-            } else {
-                moreBtn.style.display = "none";
-                moreBtn.setAttribute("aria-hidden", "true");
-            }
-        }
-
-        if (worksEmpty) {
-            const shouldShow = currentFilter === "closed" && filtered.length === 0;
-            worksEmpty.style.display = shouldShow ? "block" : "none";
-            worksEmpty.setAttribute("aria-hidden", shouldShow ? "false" : "true");
-        }
-    };
-
-    if (filterButtons.length && worksCards.length) {
-        filterButtons.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                filterButtons.forEach((item) => item.classList.remove("is-active"));
-                btn.classList.add("is-active");
-                currentFilter = btn.dataset.filter || "all";
-                isExpanded = false;
-                applyFilter();
-            });
-        });
-    }
-
-    if (moreBtn) {
-        moreBtn.addEventListener("click", () => {
-            isExpanded = true;
-            applyFilter();
-        });
-    }
-
-    if (worksCards.length) {
-        window.addEventListener("resize", applyFilter);
-        applyFilter();
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeUpCards = Array.from(
-        document.querySelectorAll(".works-card, .skills-card, .wp-card")
-    );
-    if (!fadeUpCards.length) return;
-
-    const cardGroups = new Map();
-    fadeUpCards.forEach((card) => {
-        const group = card.closest(".works__grid, .skills__grid, .wp__grid") || document.body;
-        if (!cardGroups.has(group)) {
-            cardGroups.set(group, []);
-        }
-        cardGroups.get(group).push(card);
-    });
-
-    cardGroups.forEach((cards) => {
-        cards.forEach((card, index) => {
-            card.classList.add("fadeup-card");
-            card.style.transitionDelay = `${index * 0.12}s`;
-        });
-    });
-
-    if (!("IntersectionObserver" in window)) {
-        fadeUpCards.forEach((card) => card.classList.add("is-visible"));
-        return;
-    }
-
-    const observer = new IntersectionObserver(
-        (entries, currentObserver) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("is-visible");
-                currentObserver.unobserve(entry.target);
-            });
-        },
-        {
-            root: null,
-            rootMargin: "0px 0px -10% 0px",
-            threshold: 0.2,
-        }
-    );
-
-    fadeUpCards.forEach((card) => observer.observe(card));
 });

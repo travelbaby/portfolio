@@ -37,9 +37,9 @@
     <meta name="twitter:image:alt" content="Webコーダー栗原茜のポートフォリオ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400&family=Montserrat:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/ress.min.css">
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/style.min.css?v=keyboard-menu">
 </head>
 
 <body>
@@ -49,11 +49,11 @@
     <!-- End Google Tag Manager (noscript) -->
     <header id="header" class="header">
         <nav class="nav">
-            <p class="nav__title">Akane’s Portfolio</p>
+            <a class="nav__title" href="#">Akane’s Portfolio</a>
             <div class="nav__controls">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#works">Works</a></li>
-                    <li class="nav__item"><a href="#services">Services</a></li>
+                    <li class="nav__item"><a href="#capabilities">Skills</a></li>
                     <li class="nav__item"><a href="#profile">Profile</a></li>
                     <li class="nav__item"><a href="#contact">Contact</a></li>
                 </ul>
@@ -66,16 +66,16 @@
         </nav>
     </header>
 
-    <div class="toggle-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div><!-- /.toggle-btn -->
+    <button class="toggle-btn" type="button" aria-label="メニュー" aria-controls="mask" aria-expanded="false" data-i18n-attr="aria-label:nav.menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </button>
 
-    <div id="mask">
+    <nav id="mask" aria-label="モバイルナビゲーション" data-i18n-attr="aria-label:nav.mobile">
         <ul class="nav__list">
             <li class="nav__item"><a href="#works">Works</a></li>
-            <li class="nav__item"><a href="#services">Services</a></li>
+            <li class="nav__item"><a href="#capabilities">Skills</a></li>
             <li class="nav__item"><a href="#profile">Profile</a></li>
             <li class="nav__item"><a href="#contact">Contact</a></li>
         </ul>
@@ -84,9 +84,7 @@
             <span class="language-switch__separator" aria-hidden="true">/</span>
             <button class="language-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
-    </div>
-
-
+    </nav>
 
     <main id="main" class="main">
         <div class="hero">
@@ -98,8 +96,8 @@
                 WordPressとLPの<br>
                 <span class="hero__copy--bold">実装・保守</span>まで対応します。
             </p>
-            <p class="hero__feature hero__feature--pc" data-i18n="hero.featurePc">WordPress / LP保守運用 | コミュニケーション重視 | 返信が早い（3時間以内目安）</p>
-            <p class="hero__feature hero__feature--sp" data-i18n="hero.featureSp">WordPress / LP保守運用<br>コミュニケーション重視<br>返信が早い（3時間以内目安）</p>
+            <p class="hero__feature hero__feature--pc" data-i18n="hero.featurePc">WordPressの新規構築・既存サイトの改修に対応し、ご要望に合わせて実装方法をご提案します。</p>
+            <p class="hero__feature hero__feature--sp" data-i18n="hero.featureSp">WordPressの新規構築・既存サイトの改修に対応し、ご要望に合わせて実装方法をご提案します。</p>
             <p class="hero__feature" data-i18n="hero.note">ちょっとした修正なども気軽にご相談ください！</p>
             <ul class="hero__links">
                 <li class="hero__contact"><a href="#contact">Contact</a></li>
@@ -108,232 +106,211 @@
         </div>
 
 
-        <section id="works" class="works section">
-            <div class="section__inner">
-                <h2 class="title">Works</h2>
-                <div class="works__filters">
-                    <button class="works__filter is-active" type="button" data-filter="all">All</button>
-                    <button class="works__filter" type="button" data-filter="site">Site</button>
-                    <button class="works__filter" type="button" data-filter="lp">LP</button>
-                    <button class="works__filter" type="button" data-filter="closed" data-i18n="works.filter.closed">非公開</button>
-                    <!-- Drive / Notion / Dropbox -->
-                </div>
-                <p class="works__empty" aria-live="polite" aria-hidden="true" data-i18n="works.empty">現在準備中です。<br>非公開案件多数あります。<br>お気軽にお問い合わせください。</p>
-                <div class="works__grid">
-                    <!-- Dream Gate -->
-                    <article class="works-card" data-category="lp">
-                        <div class="works-card__thumb">
-                                <img src="./img/dreamgate.webp" width="477" height="287" alt="イベントページのサムネイル" fetchpriority="high" data-i18n-attr="alt:works.dreamgate.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--lp">LP</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.dreamgate.title">イベントページ</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.figma">・Figmaのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://kpopdreamgate.com/" target="_blank" rel="noopener noreferrer" aria-label="イベントページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.dreamgate.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- and parade -->
-                    <article class="works-card" data-category="lp">
-                        <div class="works-card__thumb">
-                            <img src="./img/andparade.webp" width="477" height="287" alt="イベントページのサムネイル" loading="lazy" data-i18n-attr="alt:works.andparade.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--lp">LP</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.andparade.title">イベントページ</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.figma">・Figmaのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://andparade.com/" target="_blank" rel="noopener noreferrer" aria-label="コンタクトレンズ特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.andparade.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- wlens -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/wlens.webp" width="636" height="382" alt="WLENS サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.wlens.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.wlens.title">コンタクトレンズ販売サイト<br>TOPページ</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link"  href="https://www.wlens.jp/" target="_blank" rel="noopener noreferrer" aria-label="コンタクトレンズサイトTOPページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.wlens.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- 乱視カラコン -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/ranshi.webp" width="477" height="287" alt="乱視カラコン特集" loading="lazy" data-i18n-attr="alt:works.ranshi.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.ranshi.title">乱視カラコン特集</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/ranshi2" target="_blank" rel="noopener noreferrer" aria-label="コンタクトレンズ特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.ranshi.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- 就活カラコン -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/shukatsu.webp" width="477" height="287" alt="就活カラコン特集ページのサムネイル" loading="lazy" data-i18n-attr="alt:works.shukatsu.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.shukatsu.title">就活カラコン特集</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/shukatulens" target="_blank" rel="noopener noreferrer" aria-label="就活カラコン特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.shukatsu.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- iamme -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/iamme.webp" width="477" height="287" alt="IamMe特設サイトのサムネイル" loading="lazy" data-i18n-attr="alt:works.iamme.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.iamme.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/shohiniamme-2" target="_blank" rel="noopener noreferrer" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.iamme.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- 980 -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/page980.webp" width="477" height="287" alt="980円カラコン特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.page980.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.page980.title">980円カラコン特集</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/campaign-wave980" target="_blank" rel="noopener noreferrer" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.page980.aria">サイトを見る</a>
-                        </div>
-                    </article>
-                    <!-- wave -->
-                    <article class="works-card" data-category="site">
-                        <div class="works-card__thumb">
-                            <img src="./img/wavecp.webp" width="477" height="287" alt="コンタクトレンズ販売サイトの特集ページサムネイル" loading="lazy" data-i18n-attr="alt:works.wavecp.alt">
-                        </div>
-                        <div class="works-card__body">
-                            <div class="works-card__meta">
-                                <span class="works-card__tag works-card__tag--site">Site</span>
-                            </div>
-                            <h3 class="works-card__title" data-i18n="works.wavecp.title">コンタクトレンズ販売サイト<br>特集ページ</h3>
-                            <ul class="works-card__list">
-                                <li data-i18n="works.task.coding">・コーディング</li>
-                                <li data-i18n="works.task.xd">・XDのカンプから実装</li>
-                            </ul>
-                            <a class="works-card__link" href="https://www.wlens.jp/view/page/wavecp2411" target="_blank" rel="noopener noreferrer" aria-label="IamMe 特集ページを見る" data-i18n="works.link" data-i18n-attr="aria-label:works.wavecp.aria">サイトを見る</a>
-                        </div>
-                    </article>
+        <section id="works" class="p-portfolio-works l-section">
+            <div class="l-inner">
+            <header class="p-works-heading">
+                <h2 class="p-works-heading__title">Works<span class="p-works-heading__note"><span data-i18n="portfolio.1">制作実績</span></span></h2>
+                <p class="p-works-heading__lead"><span data-i18n="portfolio.2">WordPressの新規構築・既存サイト改修・保守運用を中心に、<br>公開可能な範囲で担当内容と実装経験をご紹介します。</span></p>
+            </header>
 
+            <section class="p-works-group">
+                <div class="p-works-group__header">
+                    <div>
+                        <p class="p-works-group__eyebrow">Featured cases</p>
+                        <h3 class="p-works-group__title"><span data-i18n="portfolio.3">WordPress・LP 実務経験</span></h3>
+                    </div>
+                    <p class="p-works-group__description"><span data-i18n="portfolio.4">守秘義務に配慮し、担当範囲・実装内容・成果が分かる形で掲載しています。</span></p>
+                </div>
 
+                <div class="p-case-list">
+                    <article class="p-work-card">
+                          <header class="p-work-card__header">
+                            <div class="p-work-card__meta"><span>CASE 01</span><span class="p-work-card__badge"><span data-i18n="workCard.1">継続依頼</span></span></div>
+                            <h4 class="p-work-card__title"><span data-i18n="workCard.2">WordPressオリジナルテーマ・CMS新規構築</span></h4>
+                          </header>
+                          <div class="p-work-card__body">
+                            <p class="p-work-card__subtitle"><span data-i18n="workCard.3">エネルギー関連企業｜コーポレートサイト構築・運用（約40ページ）</span></p>
+                            <dl class="p-work-card__details">
+                              <div><dt><span data-i18n="workCard.4">担当・実装内容</span></dt><dd><ul><li><span data-i18n="workCard.5">オリジナルテーマ構築の約9割を担当</span></li><li><span data-i18n="workCard.6">Figmaからレスポンシブ実装</span></li><li><span data-i18n="workCard.7">ACF・カスタム投稿でCMSを構築し、価格・ニュースを動的に表示</span></li></ul></dd></div>
+                              <div class="p-work-card__result"><dt><span data-i18n="workCard.8">成果</span></dt><dd><span data-i18n="workCard.9">クライアント自身で価格・ニュースを更新できる仕組みを整えました。</span></dd></div>
+                            </dl>
+                            <ul class="p-work-card__tags" aria-label="案件の特徴" data-i18n-attr="aria-label:workCard.tags"><li>WordPress</li><li>ACF</li><li><span data-i18n="workCard.10">カスタム投稿</span></li></ul>
+                          </div>
+                        </article>
+                    <article class="p-work-card">
+                          <header class="p-work-card__header">
+                            <div class="p-work-card__meta"><span>CASE 02</span><span class="p-work-card__badge"><span data-i18n="workCard.1">継続依頼</span></span></div>
+                            <h4 class="p-work-card__title"><span data-i18n="workCard.11">WordPressオリジナルテーマ改修・CMS機能開発</span></h4>
+                          </header>
+                          <div class="p-work-card__body">
+                            <p class="p-work-card__subtitle"><span data-i18n="workCard.12">美容クリニック｜既存サイトの機能改修・運用</span></p>
+                            <dl class="p-work-card__details">
+                              <div>
+                                <dt><span data-i18n="workCard.4">担当・実装内容</span></dt>
+                                <dd>
+                                  <ul>
+                                    <li><strong><span data-i18n="workCard.13">要望整理・実装方針の設計</span></strong></li>
+                                    <li><strong><span data-i18n="workCard.14">デザイン案がない場合のUI調整</span></strong><span data-i18n="workCard.15">・実装</span></li>
+                                    <li><span data-i18n="workCard.16">ACFの入力項目・登録画面・表示テンプレートを追加</span></li>
+                                  </ul>
+                                </dd>
+                              </div>
+                              <div class="p-work-card__result"><dt><span data-i18n="workCard.8">成果</span></dt><dd><span data-i18n="workCard.17">共通情報を一括更新し、複数ページの修正漏れを防止。</span></dd></div>
+                            </dl>
+                            <ul class="p-work-card__tags" aria-label="案件の特徴" data-i18n-attr="aria-label:workCard.tags"><li>WordPress</li><li>ACF</li><li><span data-i18n="workCard.18">共通情報の一括管理</span></li></ul>
+                          </div>
+                        </article>
+                    <article class="p-work-card">
+                          <header class="p-work-card__header">
+                            <div class="p-work-card__meta"><span>CASE 03</span><span class="p-work-card__badge"><span data-i18n="workCard.1">継続依頼</span></span></div>
+                            <h4 class="p-work-card__title"><span data-i18n="workCard.19">AI生成サイトのWordPress化・記事更新サービス連携</span></h4>
+                          </header>
+                          <div class="p-work-card__body">
+                            <p class="p-work-card__subtitle"><span data-i18n="workCard.20">クライアントがAIで作成した静的HTMLサイトを移行</span></p>
+                            <dl class="p-work-card__details">
+                              <div>
+                                <dt><span data-i18n="workCard.4">担当・実装内容</span></dt>
+                                <dd>
+                                  <ul>
+                                    <li><span data-i18n="workCard.21">WordPressの導入から公開まで担当</span></li>
+                                    <li><span data-i18n="workCard.22">AI記事更新サービスとの連携・投稿記事の調整</span></li>
+                                    <li><strong><span data-i18n="workCard.23">面談用ページ・記事一覧・記事詳細をデザイン・実装</span></strong></li>
+                                  </ul>
+                                </dd>
+                              </div>
+                              <div class="p-work-card__result"><dt><span data-i18n="workCard.8">成果</span></dt><dd><span data-i18n="workCard.24">記事を更新できる仕組みを整え、面談用ページへの導線を追加。</span></dd></div>
+                            </dl>
+                          </div>
+                        </article>
+                    <article class="p-work-card">
+                          <header class="p-work-card__header">
+                            <div class="p-work-card__meta"><span>CASE 04</span><span class="p-work-card__badge"><span data-i18n="workCard.25">複数案件</span></span></div>
+                            <h4 class="p-work-card__title"><span data-i18n="workCard.26">LP制作・既存ページ改修</span></h4>
+                          </header>
+                          <div class="p-work-card__body">
+                            <p class="p-work-card__subtitle"><span data-i18n="workCard.27">Figmaからのレスポンシブ実装、短納期案件、公開後の修正・計測タグの設定に対応。</span></p>
+                          </div>
+                        </article>
                 </div>
-                <div class="works__more">
-                    <button class="btn btn--outline" type="button" data-i18n="works.more">View More</button>
+            </section>
+
+            <section class="p-works-group">
+                <div class="p-works-group__header">
+                    <div>
+                        <p class="p-works-group__eyebrow">Adaptability</p>
+                        <h3 class="p-works-group__title"><span data-i18n="portfolio.48">新しい環境への対応経験</span></h3>
+                    </div>
+                    <p class="p-works-group__description"><span data-i18n="portfolio.49">未経験のツールや異なる制作環境でも、仕様を確認・調査し、依頼内容に合わせて対応してきました。</span></p>
                 </div>
+
+                <div class="p-adapt-list">
+                    <article class="p-adapt">
+                        <p class="p-adapt__category">EC SITE｜MAKESHOP</p>
+                        <h4 class="p-adapt__title"><span data-i18n="portfolio.50">MakeShopでのECサイト制作</span></h4>
+                        <p class="p-adapt__text"><span data-i18n="portfolio.51">制作環境の仕様を確認しながら、TOPページのコーディングとレスポンシブ実装に対応しました。</span></p>
+                        <div class="p-adapt__tags" aria-label="対応内容">
+                            <span class="c-tag">MakeShop</span>
+                            <span class="c-tag"><span data-i18n="portfolio.52">ECサイト</span></span>
+                            <span class="c-tag"><span data-i18n="portfolio.45">レスポンシブ</span></span>
+                        </div>
+                    </article>
+                    <article class="p-adapt">
+                        <p class="p-adapt__category"><span data-i18n="portfolio.53">NO-CODE｜制作経験</span></p>
+                        <h4 class="p-adapt__title"><span data-i18n="portfolio.54">ノーコードツールでの制作</span></h4>
+                        <p class="p-adapt__text"><span data-i18n="portfolio.55">Webflow・ペライチなど、案件に必要なツールをキャッチアップし、依頼内容を形にした経験があります。</span></p>
+                        <div class="p-adapt__tags" aria-label="使用ツール">
+                            <span class="c-tag">Webflow</span>
+                            <span class="c-tag"><span data-i18n="portfolio.56">ペライチ</span></span>
+                            <span class="c-tag"><span data-i18n="portfolio.57">キャッチアップ</span></span>
+                        </div>
+                    </article>
+                    <article class="p-adapt">
+                        <p class="p-adapt__category"><span data-i18n="portfolio.58">VARIED REQUESTS｜実務対応</span></p>
+                        <h4 class="p-adapt__title"><span data-i18n="portfolio.59">幅広い制作依頼への対応</span></h4>
+                        <p class="p-adapt__text"><span data-i18n="portfolio.60">既存サイトのWordPress化、LP・特集ページ、バナー制作など、案件ごとの要件に合わせて対応しました。</span></p>
+                        <div class="p-adapt__tags" aria-label="対応領域">
+                            <span class="c-tag"><span data-i18n="portfolio.61">WordPress化</span></span>
+                            <span class="c-tag">LP</span>
+                            <span class="c-tag"><span data-i18n="portfolio.62">バナー</span></span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div id="strengths" class="p-division-heading">
+                <h2 class="p-division-heading__title">Strengths<span class="p-division-heading__note"><span data-i18n="portfolio.63">仕事を進めるうえでの強み</span></span></h2>
+                <p class="p-division-heading__lead"><span data-i18n="portfolio.64">実装だけでなく、要望の整理や関係者とのすり合わせを行い、制作を円滑に進めることを大切にしています。</span></p>
+            </div>
+
+            <section class="p-works-group">
+                <div class="p-strength-list">
+                    <article class="p-strength">
+                        <div class="p-strength__icon" aria-hidden="true">01</div>
+                        <h3 class="p-strength__title"><span data-i18n="portfolio.67">クライアント対応</span></h3>
+                        <p class="p-strength__text"><span data-i18n="portfolio.68">クライアント対応とWeb制作講師の経験を通して、要望を整理し、相手に合わせて分かりやすく伝えることを心がけています。</span></p>
+                    </article>
+                    <article class="p-strength">
+                        <div class="p-strength__icon" aria-hidden="true">02</div>
+                        <h3 class="p-strength__title"><span data-i18n="portfolio.69">要件整理・制作連携</span></h3>
+                        <p class="p-strength__text"><span data-i18n="portfolio.70">要望をもとに仕様や実装方針を整理し、関係者と連携して制作を進めます。デザインカンプがない場合も、既存サイトのトーンや使いやすさを考慮し、UI調整から実装まで対応します。</span></p>
+                    </article>
+                    <article class="p-strength">
+                        <div class="p-strength__icon" aria-hidden="true">03</div>
+                        <h3 class="p-strength__title"><span data-i18n="portfolio.71">調査・キャッチアップ</span></h3>
+                        <p class="p-strength__text"><span data-i18n="portfolio.72">経験のないツールや環境でも、仕様を調べ、必要な実装方法を選びながら形にしてきました。</span></p>
+                    </article>
+                </div>
+            </section>
+
+            <div id="capabilities" class="p-division-heading">
+                <h2 class="p-division-heading__title">Capabilities &amp; Skills<span class="p-division-heading__note"><span data-i18n="portfolio.73">対応領域・使用技術</span></span></h2>
+                <p class="p-division-heading__lead"><span data-i18n="portfolio.74">対応できる業務と使用している技術・ツールをセットでまとめ、依頼内容に合うかを短時間で確認できる構成です。</span></p>
+            </div>
+
+            <section class="p-works-group">
+                <div class="p-capability-list">
+                    <article class="p-capability">
+                        <p class="p-capability__number">01｜WORDPRESS</p>
+                        <h3 class="p-capability__title"><span data-i18n="portfolio.77">WordPress構築・運用</span></h3>
+                        <p class="p-capability__text"><span data-i18n="portfolio.78">新規構築から既存サイトの改修、更新しやすいCMS構築、公開後の保守運用まで対応します。</span></p>
+                        <p class="p-capability__label"><span data-i18n="portfolio.79">対応内容・使用技術</span></p>
+                        <div class="p-case__tags">
+                            <span class="c-tag"><span data-i18n="portfolio.80">オリジナルテーマ</span></span>
+                            <span class="c-tag">ACF</span>
+                            <span class="c-tag"><span data-i18n="portfolio.81">カスタム投稿</span></span>
+                            <span class="c-tag"><span data-i18n="portfolio.82">保守運用</span></span>
+                        </div>
+                    </article>
+                    <article class="p-capability">
+                        <p class="p-capability__number">02｜FRONT-END</p>
+                        <h3 class="p-capability__title"><span data-i18n="portfolio.83">フロントエンド実装</span></h3>
+                        <p class="p-capability__text"><span data-i18n="portfolio.84">Figmaなどのデザインから、レスポンシブ対応やJavaScriptを含むWebページを実装します。</span></p>
+                        <p class="p-capability__label"><span data-i18n="portfolio.79">対応内容・使用技術</span></p>
+                        <div class="p-case__tags">
+                            <span class="c-tag">HTML</span>
+                            <span class="c-tag">SCSS</span>
+                            <span class="c-tag">JavaScript</span>
+                            <span class="c-tag"><span data-i18n="portfolio.85">BEM・FLOCSS</span></span>
+                            <span class="c-tag">Gulp</span>
+                        </div>
+                    </article>
+                    <article class="p-capability">
+                        <p class="p-capability__number">03｜PRODUCTION SUPPORT</p>
+                        <h3 class="p-capability__title"><span data-i18n="portfolio.86">制作・運用サポート</span></h3>
+                        <p class="p-capability__text"><span data-i18n="portfolio.87">クライアント対応や要件整理、関係者との制作連携、ページ追加、公開後の改善にも対応します。</span></p>
+                        <p class="p-capability__label"><span data-i18n="portfolio.88">対応内容・使用ツール</span></p>
+                        <div class="p-case__tags">
+                            <span class="c-tag">Figma</span>
+                            <span class="c-tag">Git</span>
+                            <span class="c-tag"><span data-i18n="portfolio.89">GA・GTM</span></span>
+                            <span class="c-tag"><span data-i18n="portfolio.90">Web制作講師</span></span>
+                            <span class="c-tag"><span data-i18n="portfolio.91">コードレビュー</span></span>
+                        </div>
+                    </article>
+                </div>
+            </section>
             </div>
         </section>
-
-        <section id="services" class="services section">
-            <div class="section__inner">
-                <h2 class="title" data-i18n="services.title">Services<br>
-                    <span class="title__note">対応可能な業務領域</span>
-                </h2>
-                <div class="services__grid">
-                    <div class="service-card">
-                        <p class="service-card__num">01</p>
-                        <div class="service-card__icon">
-                            <img src="./img/icon_wp.webp" width="400" height="400" alt="WordPress">
-                        </div>
-                        <h3 class="service-card__title">WordPress</h3>
-                        <ul class="service-card__list">
-                            <li data-i18n="services.wp.item01">・独自テーマの新規開発</li>
-                            <li data-i18n="services.wp.item02">・静的HTML→WordPress化</li>
-                            <li data-i18n="services.wp.item03">・既存テーマの改修</li>
-                            <li data-i18n="services.wp.item04">・動的サイトの構築</li>
-                            <li data-i18n="services.wp.item05">・更新しやすい設計（ACF/CPTでCMS化）</li>
-                            <li data-i18n="services.wp.item06">・保守／運用</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <p class="service-card__num">02</p>
-                        <div class="service-card__icon">
-                            <img src="./img/icon_code.webp" width="400" height="400" alt="HTML">
-                        </div>
-                        <h3 class="service-card__title">HTML｜CSS｜JavaScript</h3>
-                        <ul class="service-card__list">
-                            <li data-i18n="services.code.item01">・レスポンシブ対応</li>
-                            <li data-i18n="services.code.item02">・アニメーション実装</li>
-                            <li data-i18n="services.code.item03">・保守性の高い実装（SCSS／BEM記法）</li>
-                            <li data-i18n="services.code.item04">・ビルド環境（Gulp）での効率的開発</li>
-                            <li data-i18n="services.code.item05">・読み込み速度やSEOを意識</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="service-card__note" data-i18n="services.note">その他にも解析用パラメータ／タグの設置、make shop（ECプラットフォーム）、Webflow（ノーコードツール）<br class="pc-only">の実務経験があります。</p>
-            </div>
-        </section>
-
-        <section class="skills section" id="skills">
-            <div class="section__inner">
-                <h2 class="title" data-i18n="skills.title">Skills<br>
-                    <span class="title__note">使用技術・環境</span>
-                </h2>
-                <div class="skills__grid">
-                    <div class="skills-card">
-                        <h3 class="skills-card__title" data-i18n="skills.techTitle">使用技術</h3>
-                        <ul class="skills-card__list">
-                            <li>HTML / CSS(SCSS)</li>
-                            <li data-i18n="skills.tech.item02">BEM記法 / FLOCSS</li>
-                            <li>JavaScript</li>
-                            <li>WordPress</li>
-                        </ul>
-                    </div>
-                    <div class="skills-card">
-                        <h3 class="skills-card__title" data-i18n="skills.toolsTitle">制作ツール / プラットフォーム</h3>
-                        <ul class="skills-card__list">
-                            <li>Visual Studio Code</li>
-                            <li>Figma / Adobe XD / Photoshop</li>
-                            <li>Gulp / Git</li>
-                            <li>Webflow / make shop</li>
-                            <li>GA / GTM</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <section class="flow section" id="flow">
             <div class="section__inner">
@@ -373,63 +350,6 @@
             </div>
         </section>
 
-        <section class="wp section" id="wp">
-            <div class="section__inner">
-                <h2 class="title">Work Policy<br>
-                </h2>
-                <div class="wp__grid">
-                    <div class="wp-card">
-                        <div class="wp-card__icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <rect width="64" height="64" fill="url(#pattern0_43_762)"/>
-                            <defs>
-                            <pattern id="pattern0_43_762" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use xlink:href="#image0_43_762" transform="scale(0.0078125)"/>
-                            </pattern>
-                            <image id="image0_43_762" width="128" height="128" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
-                            </defs>
-                            </svg>
-                        </div>
-                        <h3 class="wp-card__title" data-i18n="policy.communication.title">コミュニケーション重視</h3>
-                        <p class="wp-card__text" data-i18n="policy.communication.text01">読み込まなくても理解できる、<br>整理された文章を心がけています。</p>
-                        <p class="wp-card__text" data-i18n="policy.communication.text02">手戻りを減らすため、<br>早めの共有と確認を徹底します。</p>
-                    </div>
-                    <div class="wp-card">
-                        <div class="wp-card__icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <rect width="64" height="64" fill="url(#pattern0_43_763)"/>
-                            <defs>
-                            <pattern id="pattern0_43_763" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use xlink:href="#image0_43_763" transform="scale(0.0078125)"/>
-                            </pattern>
-                            <image id="image0_43_763" width="128" height="128" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
-                            </defs>
-                            </svg>
-                        </div>
-                        <h3 class="wp-card__title" data-i18n="policy.detail.title">細部までこだわる実装</h3>
-                        <p class="wp-card__text" data-i18n="policy.detail.text01">見た目の再現だけでなく、崩れにくく<br>運用しやすい実装を意識します。</p>
-                        <p class="wp-card__text" data-i18n="policy.detail.text02">デザインの意図を汲み取り、<br>丁寧な実装を大切にしています。</p>
-                    </div>
-                    <div class="wp-card">
-                        <div class="wp-card__icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <rect width="64" height="64" fill="url(#pattern0_43_791)"/>
-                            <defs>
-                            <pattern id="pattern0_43_791" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use xlink:href="#image0_43_791" transform="scale(0.0078125)"/>
-                            </pattern>
-                            <image id="image0_43_791" width="128" height="128" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFkUlEQVR4AeydUW4TSRCGbR+L3YfsDeAwyz4CjysOAzeAB5Rj2fAJlTQa4sxMu7urqvtHqrST2NNV//cxiS3buZz0b+oEJMDU+E8nCSABJk9g8vF1BpAAkycw+fg6A0iAyROYdHwbW2cAS2LSVQJMCt7GlgCWxKSrBBgA/JfPfz99+f/Nx5JRJEBJaoFuA/zz7frtfD59KJFAAgSCebQVg2+3K5FAAlh6ydY1fGv/qAQSwJJLtN6DbyO8JoFdx1YJYEkkWbfg2xh7JZAAlliCdS98G2WPBBLA0gq+HoVv42xJcOHAql/3o7kvXbEMQI0VPtzVKz3WaxJcOLDq1/1o7ktXqtP1+lQKa327R+Hb8e5JoB8BllCl9XY7fXr333PRo3LrFmrBt+O+JIEEsHQqrJHh23hrCSSAJfPgGh3+crylBBJgmUzh5UzwbUSTQAJYIoVrRvjLUSXAMo2DlzPDt94lwEHodnUL0D5/ZK392/5WL8veJcBWWi98fxngC98+9CVP+DQqAUjhQI0En7ElACnsrNHgM7YEIIUdlRU+o73WuwQgoY16LcCNm/7xbe+f+euGigS4nS//vH3/fJ6loj62v4a5/nyPuEUCrDfS59sJRPufbx1LAEui4RoVPiNLAFJoWJHhM7YEIIVGFR0+Y0sAUmhQGeAztgQghcoVAf7ekSTA3qR2Xi8TfEYKLcDXz399K3nBI4N5VDb4ZBRWAOCfbrcne+YKzUaujPDJM6QABp8GqegSZIVPtuEEWMOnSSqqBJnhk2soAe7Bp1EqmgTZ4ZNpGAG24NMsFUWCEeCTZwgB9sKnYcpbgsjwyedIuQtwFL4N5yXBSPDJ0lWAUvg0TvWWYDT4ZOgmwKPwaZ7qJcGI8MnPRYBa8BmAai3BqPDJrrsAteEzBNVKgpHhk1tXAVrBZxCqtgSjwyezbgK0hs8wVC0JZoBPXt0EuJ3On9iwR50L3zbVessI33o/unYT4N2/P77zdPKjDZZev1SCmeCTbTcB2Cy6BLPBh0lXAdgwqgQzwodHdwHYNJoEs8KHhYsAbBxFgpnhw8FNADb3lmB2+DBwFYAGvCQQfNIP8sejPSTg7XF/R9D+455X6ZZ28ejt3M8ANkBvCWzf1mtk+MweRgCaGU2C6PDJPJQANDSKBBngk3c4AWgquwRZ4JN1SAFoLKsEmeCTc1gBaC6bBNngk3FoAWgwiwQZ4ZNveAFoMroEHvDJpUalEIBBo0qQGT65phGAZqNJkB0+maYSgIajSDACfPJMJwBNe0swCnyyTCkAjXtJMBJ8ckwrAM33lmA0+GSYWgAG6CXBiPDJL70ADNFagkjwmbdmDSEAgbSSYGT45DaMAAxTW4Ie8HkfRJ6eRv8eNZQABFhLgl7weQUTfXvVcAIQ5KMSzAKfrIYUgMFKJZgJPjkNKwDDHZVgNvhkNLQADLhXghnhk8/wAjDklgQZ4DNHi5pCAIK7J8HM8MllGgEYdi3B7PDJZCoBGNgkEHzSCPLawN+t9PuIBLX+Gui9rnmEz/tBnnu9Lb8+3RlgOXyry1ngM78EIIWKlQk+Y0sAUqhYGU77y3ElwDKNgJdbtyQBWicc/PgSIDig1u1JgNYJBz++BAgOqHV7EqB1wsGPLwGCA2rdngRonXDw45cJcL0+8YiX6s3HdQa1ePc6TpEAPNqlOn14KYNe4GrtUyRArc11HP8EJIA/A9cOJIBr/P6bSwB/Bq4dSADX+P03lwD+DFw7kACu8f+5ee+vSIDeiQfbTwIEA9K7HQnQO/Fg+0mAYEB6tyMBeicebL/L2/fPZ5VvBrxSycsLnQG8kg+yrwQIAsKrDQnglXyQfSVAEBBebUgAr+SD7CsBgoDwakMCeCUfZF8JEASEVxsSwCv5IPtKAGcQ3tv/BAAA//9RZqYmAAAABklEQVQDANKTolul4krCAAAAAElFTkSuQmCC"/>
-                            </defs>
-                            </svg>
-                        </div>
-                        <h3 class="wp-card__title" data-i18n="policy.support.title">修正・運用まで丁寧に</h3>
-                        <p class="wp-card__text" data-i18n="policy.support.text01">納品形式（ZIP/反映）や<br>軽微な調整なども柔軟に合わせます。</p>
-                        <p class="wp-card__text" data-i18n="policy.support.text02">変更点などは簡単なメモにまとめ、<br>引き継ぎもスムーズにします。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="pf section" id="profile">
             <div class="section__inner">
                 <h2 class="title">Profile<br>
@@ -454,28 +374,6 @@
             </div>
         </section>
 
-
-        <!-- <section id="contact">
-            <h2 class="contact__title titleAnime">CONTACT</h2>
-            <form action="#" method="post" class="contact">
-                <div class="contact__item">
-                    <label for="name" class="contact__label">お名前</label>
-                    <input class="contact__input" type="text" name="name" id="name" required>
-                </div>
-                <div class="contact__item">
-                    <label class="contact__label" for="email">メールアドレス</label>
-                    <input class="contact__input" type="email" name="email" id="email" required>
-                </div>
-                <div class="contact__item">
-                    <label class="contact__label" for="message">お問い合せ内容</label>
-                    <textarea class="contact__textarea" type="message" name="message" id="message" required></textarea>
-                </div>
-                <div class="contact__item">
-                <button class="contact__button" type="submit">送信</button>
-                </div>
-            </form>
-        </section> -->
-
         <section id="contact">
             <div class="contact-wrapper">
                 <iframe
@@ -489,24 +387,6 @@
                 </iframe>
             </div><!-- /.contact-wrapper -->
         </section>
-
-        <!-- <ul id="sns" class="sns">
-            <li class="sns__item">
-                <a href="#" target="_blank" rel="noopener noreferrer" title="instagramを開きます">
-                    <img src="img/insta_icon.png" alt="Instagramアイコン" loading="lazy">
-                </a>
-            </li>
-            <li class="sns__item">
-                <a href="#" target="_blank" rel="noopener noreferrer" title="blogを開きます">
-                    <img src="img/blog_icon.png" alt="Blogアイコン" loading="lazy">
-                </a>
-            </li>
-            <li class="sns__item">
-                <a href="#" target="_blank" rel="noopener noreferrer" title="Xを開きます">
-                    <img src="img/x_icon.png" alt="Xアイコン" loading="lazy">
-                </a>
-            </li>
-        </ul> -->
     </main>
 
     <footer class="footer">
